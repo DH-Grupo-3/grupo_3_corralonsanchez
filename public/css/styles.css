@@ -1,0 +1,138 @@
+:root {
+    --fuente: 'Montserrat', sans-serif;
+    --primario: #ff7833;
+    --secundario: #dfdad4;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: var(--fuente);
+
+}
+
+h1 {
+    font-size: 2rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.navegacion-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.nav-bg {
+    background-color: var(--primario);
+    height: 2rem;
+    padding-top: 0.8rem;
+}
+
+.heading {
+    background-color: var(--secundario);
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+.buscador {
+    display: flex;
+    margin: auto 0;
+    height: 3rem;
+    width: 40%;
+    
+}
+.buscador__input {
+    width: 100%;
+}
+
+.titulo {
+    display: none;
+}
+
+.footer__bg {
+    position: relative;
+    background-color: var(--secundario);
+}
+
+.destacados {
+    display: flex;
+    flex-basis: calc(33%);
+}
+
+.productos {
+    width: 100%;
+    text-align: center;
+}
+
+.logo_f{
+    position: relative;
+    left: 10rem;
+    top: 4rem;
+}
+
+.seccion_f{
+    /*position: absolute;*/
+    position: relative;
+    left: 60rem;
+    top: -8rem;
+    width: 20rem;
+}
+
+#nav_fo{
+    /*position: absolute;
+    display: inline-block;*/
+    position: relative;
+    left: 60rem;
+    top: -8rem;
+}
+
+
+#map{
+    /*display: inline-block;*/
+    position: absolute;
+    right: 100px;
+    top: 2px;
+}   
+
+main div section p {
+    width: 100%;
+}
+
+
+main section p {
+    width: 60%;
+}
+
+footer {
+    padding: 1rem;
+}
+
+.logo {
+    margin: 2rem;
+}
+
+li {
+    list-style:none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+div section img {
+    width: 30%
+}
