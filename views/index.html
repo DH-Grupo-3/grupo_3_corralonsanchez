@@ -1,87 +1,106 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corralon Sanchez</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/css/styles.css">
-  </head>
-  <body>
-    <header class="heading">
-      <img class="logo" src="../public/images/Logo corralon.png" alt="Logo" width=100 height=100>
-      <h1 class="titulo">Corralon Sanchez</h1>
-      <form class="buscador" action="#">
-        <input class="buscador__input" type="search" id="search" name="search" placeholder="Buscar productos, marcas, etc.">
-        <button><img src="../public/images/search.png" alt="" width=24 height=24> </button>
-      </form>
-      <img class="carrito"> 
-    </header>
-    <div class="nav-bg">
-      <nav class="navegacion-principal contenedor">
-          <a href="#">Productos</a>
-          <a href="#">Ofertas</a>
-          <a href="#">Ayuda</a>
-          <a href="#">Contacto</a>
-      </nav>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corralon Sanchez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/css/styles.css">
+</head>
+
+<body>
+  <header class="heading">
+    <img class="logo" src="../public/images/Logo corralon.png" alt="Logo" width=100 height=100>
+    <h1 class="titulo">Corralon Sanchez</h1>
+    <div class="buscador">
+      <input class="buscador__input" type="search" id="search" name="search"
+        placeholder="Buscar productos, marcas, etc.">
+      <button><img class="buscador__icono" src="../public/images/search.png" alt=""> </button>
+  
+  </div>
+    <div class="carrito-user">
+      <a href="#"> <img class="carrito" src="/public/images/shopping-cart1.png" alt="icono_carrito"></a>
+      <a href="#"><img class="user" src="/public/images/user1.png" alt="icono_user"></a>
+       
+        
     </div>
-    <main>
-      <section class="quienes_somos">
-        <h2>Quiénes Somos</h2>
-        <p>In volutpat lorem tellus, ac rhoncus neque scelerisque quis. Nulla vel commodo quam, eu lacinia dui. Aliquam
-          vestibulum cursus tellus vitae laoreet. Donec placerat quam non mi ultrices, tempus sollicitudin lacus
-          ullamcorper.</p>
-      </section>
-      <section>
-        <h2>Nuestros Destacados</h2>
-      </section>
-      <div class="destacados">
-        <div class="destacados__contenedor">
+  </header>
+  <div class="nav-bg">
+    <nav class="navegacion-principal contenedor">
+      <a href="#">Productos</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Ayuda</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </div>
+  <main>
+    <section class="quienes_somos">
+      <h2>Quiénes Somos</h2>
+      <p>In volutpat lorem tellus, ac rhoncus neque scelerisque quis. Nulla vel commodo quam, eu lacinia dui. Aliquam
+        vestibulum cursus tellus vitae laoreet. Donec placerat quam non mi ultrices, tempus sollicitudin lacus
+        ullamcorper.</p>
+    </section>
+    <section>
+      <h2>Nuestros Destacados</h2>
+    </section>
+    <div class="destacados">
+      <div class="destacados__contenedor">
         <section class="productos">
           <img src="../public/images/productos/prod1.jfif" alt="producto">
           <h3>Producto 1 </h3>
-          <p>Precio: $1234</p>
-          <p>Descripcion: Nullam sed vestibulum odio.</p>
+          <p class="precio">Precio: $164564</p>
+          <p class="descrip" >Descripcion: Nullam sed vestibulum odio.</p>
         </section>
       </div>
       <div class="destacados__contenedor">
         <section class="productos">
           <img src="../public/images/productos/prod2.webp" alt="producto">
           <h3>Producto 2 </h3>
-          <p>Precio: $1234</p>
-          <p>Descripcion: Nullam sed vestibulum odio.</p>
+          <p class="precio">Precio: $1638</p>
+          <p class="descrip" >Descripcion: Nullam sed vestibulum odio.</p>
         </section>
       </div>
       <div class="destacados__contenedor">
         <section class="productos">
           <img src="../public/images/productos/prod3.jfif" alt="producto">
           <h3>Producto 3 </h3>
-          <p>Precio: $1234</p>
-          <p>Descripcion: Nullam sed vestibulum odio.</p>
+          <p  class="precio">Precio: $1645</p>
+          <p class="descrip" >Descripcion: Nullam sed vestibulum odio.</p>
         </section>
       </div>
+      <div class="destacados__contenedor">
+        <section class="productos">
+          <img src="../public/images/productos/prod5.jfif" alt="producto">
+          <h3>Producto 4 </h3>
+          <p  class="precio">Precio: $1234</p>
+          <p class="descrip" >Descripcion: Nullam sed vestibulum odio.</p>
+        </section>
       </div>
-    </main>
-    <footer class="footer__bg">
-      <img class=logo_f src="../public/images/Logo corralon.png" alt="Logo" width=100 height=100>
-      <section>
-        <h3>Secciones</h3>
-        <nav class="nav_fo">
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Ayuda</a></li>
-            <li><a href="#">Contactos</a></li>
-          </ul>
-        </nav>
-      </section>
-      <div id="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.2077489190187!2d-59.013965617386916!3d-27.47341382710063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450c9ffbd2425d%3A0x3bd4c7ef7566fd2e!2sAv.%20Alberdi%202815%2C%20Resistencia%2C%20Chaco!5e0!3m2!1ses!2sar!4v1640869240317!5m2!1ses!2sar" 
+    </div>
+  </main>
+  <footer class="footer__bg">
+    <img class=logo_f src="../public/images/Logo corralon.png" alt="Logo" width=100 height=100>
+    <section class="secciones">
+      <h3>Secciones</h3>
+      <nav class="nav_fo">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Ofertas</a></li>
+          <li><a href="#">Ayuda</a></li>
+          <li><a href="#">Contactos</a></li>
+        </ul>
+      </nav>
+    </section>
+    <div id="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.2077489190187!2d-59.013965617386916!3d-27.47341382710063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450c9ffbd2425d%3A0x3bd4c7ef7566fd2e!2sAv.%20Alberdi%202815%2C%20Resistencia%2C%20Chaco!5e0!3m2!1ses!2sar!4v1640869240317!5m2!1ses!2sar"
         width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
+
 </html>
