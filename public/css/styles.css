@@ -344,9 +344,9 @@ footer h3 {
 
 
 .formulario {
-    background-color: var(--primario);
+    background-color: var(--secundario);
     width: min( 60rem, 100% ); 
-    margin: 0 auto 4rem auto; 
+    margin: 6rem auto 4rem auto; 
     padding: 2rem;
     border-radius: 1rem;
     -webkit-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
@@ -382,7 +382,7 @@ footer h3 {
 }
 
 .campo label {
-    color: var(--blanco);
+    color: var(--gris);
     font-weight: bold;
     margin-bottom: .5rem;
     display: block;
@@ -409,7 +409,7 @@ footer h3 {
 }
 
 .boton {
-    background-color: var(--gris);
+    background-color: var(--primario);
     color: var(--blanco);
     padding:1rem 3rem;
     margin-top: 1rem;
@@ -429,7 +429,7 @@ footer h3 {
 }
 .boton:hover {
     cursor: pointer;
-    background-color: var(--secundario);
+    background-color: var(--gris);
     color: var(--primario);
     
 }  
@@ -451,4 +451,53 @@ footer h3 {
 
 .titulo_registro {
     color: var(--gris);
+}
+
+fieldset legend {
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos-login {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto;
+    gap: 2rem; 
+
+}
+}
+
+.formulario_login {
+    background-color: var(--secundario);
+    width: min( 60rem, 100% ); 
+    margin: 6rem auto 4rem auto; 
+    padding: 2rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
+    -moz-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
+    box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
+
+}
+.formulario_login fieldset {
+    border: none;
+}
+.formulario_login legend {
+    text-align: center; 
+    font-size: 1.8rem; 
+    text-transform: uppercase; 
+    font-weight: 700; 
+    margin-bottom: 2rem; 
+    color: var(--gris); 
+}
+
+.recuperar_pass {
+    text-align: center;
+}
+
+.letra_primario {
+    color: var(--primario);
+}
+
+.letra_gris {
+    color: var(--gris)
 }
