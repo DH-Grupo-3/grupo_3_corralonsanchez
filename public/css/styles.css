@@ -241,7 +241,7 @@ div section img {
 @media (min-width: 768px) {
     .destacados {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         
     
     }
@@ -545,4 +545,15 @@ fieldset legend {
 
 .mg_bt{
     margin-bottom: 1rem;
+}
+h4 {
+    margin-left: 4rem;
+    color: var(--gris);
+}
+
+@media (min-width: 768px) {
+    .detalle__similares {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
