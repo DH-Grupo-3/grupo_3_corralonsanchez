@@ -12,6 +12,10 @@ Siendo nuestro publico objetivo las constructoras, otros corralones y consumidor
 - Julieta Passotti
 - Gaston Emmanuel Ferreyra
 
+### Tablero:
+
+- [Tablero en Trello](https://trello.com/b/8WrBJ0Mq/grupo-3-dh).
+
 ### Referencias:
 
 - [Familia Bercomat](https://www.familiabercomat.com)
