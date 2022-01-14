@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --fuente: 'Montserrat', sans-serif;
     --primario: #ff7833;
     --secundario: #dfdad4;
@@ -42,9 +42,9 @@ li {
 a {
     text-decoration: none;
     color: inherit; 
-}
+} */
 
-div section img {
+.imagen_producto {
     width: 15rem;
     height: 100%;
     max-height: 150;
@@ -60,11 +60,11 @@ div section img {
     padding: 1rem;
     margin: 0;
 }
-.contenedor{
+/* .contenedor{
     max-width: 120rem;
     margin: 0 auto;
-}
-.navegacion-principal {
+} */
+/* .navegacion-principal {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -88,9 +88,9 @@ div section img {
 .navegacion-principal a:hover{
     background-color: var(--gris);
     color: var(--primario);
-}
+} */
 
-.heading {
+/* .heading {
     background-color: var(--secundario);
     width: 100%;
     height: auto;
@@ -98,7 +98,7 @@ div section img {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 
 .carrito {
@@ -114,7 +114,7 @@ div section img {
     margin-bottom: 3rem;
 }
 
-@media (min-width: 480px) {
+/* @media (min-width: 480px) {
     .carrito-user {
         grid-column: 3 / 4;
         margin: auto 2rem auto auto;
@@ -131,9 +131,9 @@ div section img {
         max-width: 40rem;
     }
     
-}
+} */
 
-@media (min-width: 700px) {
+/* @media (min-width: 700px) {
     .heading {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -148,14 +148,14 @@ div section img {
         margin: auto 2rem auto auto;
         margin-right: 5rem;
     }
-}
+} */
 .nav-bg {
     background-color: var(--primario);
 }
 
 
 
-.buscador {
+/* .buscador {
     display: flex;
     flex-direction: row;
     margin-bottom: 4rem;
@@ -168,9 +168,9 @@ div section img {
 
 .buscador__icono {
     width: 1rem;
-}
+} */
 
-.logo {
+/* .logo {
     width: 15rem;
     height: auto;
 }
@@ -178,14 +178,14 @@ div section img {
     .logo {
         margin-left: 3rem;
     }
-}
+} */
 
-.titulo {
+/* .titulo {
     display: none;
-}
+} */
 
 
-.quienes_somos p {
+/* .quienes_somos p {
     width: 90%;
     margin: auto;
 }
@@ -252,11 +252,11 @@ div section img {
         
     
     }
-}
+} */
 
-main div section p {
+/* main div section p {
     width: 100%;
-}
+} */
 
 footer {
     padding: 1rem;
@@ -337,7 +337,7 @@ footer h3 {
 
 /** Registro **/
 
-.formulario {
+/* .formulario {
     background-color: var(--secundario);
     width: min( 60rem, 100% ); 
     margin: 6rem auto 4rem auto; 
@@ -458,11 +458,11 @@ fieldset legend {
     gap: 2rem; 
 
 }
-}
+} */
 
 /** Login **/
 
-.formulario_login {
+/* .formulario_login {
     background-color: var(--secundario);
     width: min( 60rem, 100% ); 
     margin: 6rem auto 4rem auto; 
@@ -495,11 +495,11 @@ fieldset legend {
 
 .letra_gris {
     color: var(--gris)
-}
+} */
 
 /** Detalles Producto **/
 
-.formulario__campo {
+/* .formulario__campo {
     border-width: 1rem;
     border-style: solid;
     border-color: var(--primario);
@@ -507,9 +507,9 @@ fieldset legend {
     color: var(--gris);
     font-size: 2rem;
     padding: 1rem;
-    appearance: none; /* quitar la flecha hacia abajo del select */
-}
-.formulario__submit {
+    appearance: none; quitar la flecha hacia abajo del select
+} */
+/* .formulario__submit {
     background-color: var(--primario);
     border: none;
     font-size: 2rem;
@@ -549,4 +549,4 @@ h4 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-}
+} */
