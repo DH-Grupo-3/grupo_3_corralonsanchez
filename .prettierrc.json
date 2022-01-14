@@ -1,13 +1,22 @@
 {
-    "printWidth": 80,
+    "printWidth": 100,
     "singleQuote": true,
     "trailingComma": "all",
-    "endOfLine": "auto",
+    "endOfLine": "crlf",
+    "useTabs": true,
     "": 2,
-    "overrides": [{
-        "files": "*.html",
-        "options": {
-            "tabWidth": 4
+    "overrides": [
+        {
+            "files": "*.ejs",
+            "options": {
+                "tabWidth": 4
+            }
+        },
+        {
+            "files": "*.json",
+            "options": {
+                "tabWidth": 4
+            }
         }
-    }]
+    ]
 }
