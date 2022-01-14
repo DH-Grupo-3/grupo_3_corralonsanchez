@@ -1,32 +1,33 @@
 {
-  "name": "grupo_3_corralonsanchez",
-  "version": "1.0.0",
-  "description": "El sitio esta enfocado en la venta de materiales para la construcción, tanto mayorista como minorista.\r Siendo nuestro publico objetivo las constructoras, otros corralones y consumidores finales.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env nodemon ./src/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DH-Grupo-3/grupo_3_corralonsanchez.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DH-Grupo-3/grupo_3_corralonsanchez/issues"
-  },
-  "homepage": "https://github.com/DH-Grupo-3/grupo_3_corralonsanchez#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.2",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3",
-    "eslint": "^8.5.0",
-    "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
-  }
+    "name": "grupo_3_corralonsanchez",
+    "version": "1.0.0",
+    "description": "El sitio esta enfocado en la venta de materiales para la construcción, tanto mayorista como minorista.\r Siendo nuestro publico objetivo las constructoras, otros corralones y consumidores finales.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "cross-env nodemon ./src/index.js -e css,js,mjs,json,ejs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DH-Grupo-3/grupo_3_corralonsanchez.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DH-Grupo-3/grupo_3_corralonsanchez/issues"
+    },
+    "homepage": "https://github.com/DH-Grupo-3/grupo_3_corralonsanchez#readme",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "ejs": "^3.1.6",
+        "express": "^4.17.2",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "eslint": "^8.5.0",
+        "nodemon": "^2.0.15",
+        "prettier": "^2.5.1"
+    }
 }
