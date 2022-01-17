@@ -20,3 +20,7 @@ exports.productDetail = (req, res, next) => {
 exports.productCart = (req, res, next) => {
   res.render('productCart');
 };
+
+exports.productForm = (req, res, next) => {
+  res.render('productForm');
+};
