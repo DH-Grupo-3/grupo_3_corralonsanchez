@@ -30,6 +30,7 @@ h1 {
 }
 h2{
     font-size: 2.8rem;
+
 }
 h3 {
     font-size: 1.8rem;
@@ -44,7 +45,7 @@ a {
     color: inherit; 
 }
 
-div section img {
+article div img {
     width: 15rem;
     height: 100%;
     max-height: 150;
@@ -60,20 +61,22 @@ div section img {
     padding: 1rem;
     margin: 0;
 }
+
 .contenedor{
-    max-width: 120rem;
+    /* max-width: 120rem;   */
     margin: 0 auto;
 }
 .navegacion-principal {
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: var(--primario);
 }
 
 @media (min-width: 480px) {
     .navegacion-principal {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 }
 
@@ -124,7 +127,7 @@ div section img {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .buscador {
+     .buscador__input .buscador__icono { 
         grid-row: 2 / 3;
         grid-column: 1 / 4;
         margin: auto;
@@ -149,9 +152,9 @@ div section img {
         margin-right: 5rem;
     }
 }
-.nav-bg {
+/* .nav-bg {
     background-color: var(--primario);
-}
+} */
 
 
 
@@ -192,7 +195,7 @@ div section img {
 
 .productos {
     width: 100%;
-    height: 100%;
+    height: 100%; 
     border: solid rgb(105, 105, 105) 0.2rem;
     transition: all 250ms;
     
@@ -375,10 +378,10 @@ footer h3 {
     margin-bottom: 1rem;
 }
 
-.campo label {
+ .campo label {
     color: var(--gris);
     font-weight: bold;
-    margin-bottom: .5rem;
+    margin-bottom: .3rem;
     display: block;
 }
 
@@ -394,13 +397,13 @@ footer h3 {
 
 }
 
-.alinear-derecha {
+/* .alinear-derecha {
     justify-content: flex-end;
 }
 
 .flex {
     display: flex;
-}
+} */
 
 .boton {
     background-color: var(--primario);
@@ -414,6 +417,8 @@ footer h3 {
     width: 90%;
     text-align: center;
     border: none;
+    display: flex;
+    justify-content: flex-end;
 }
 @media (min-width: 768px) {
     .boton {
@@ -456,7 +461,6 @@ fieldset legend {
     grid-template-columns: 1fr; 
     grid-template-rows: auto auto;
     gap: 2rem; 
-
 }
 }
 
@@ -468,14 +472,15 @@ fieldset legend {
     margin: 6rem auto 4rem auto; 
     padding: 2rem;
     border-radius: 1rem;
-    -webkit-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
-    -moz-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
-    box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
-
+    -webkit-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.40);
+    -moz-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.40);
+    box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.40);
 }
+
 .formulario_login fieldset {
     border: none;
 }
+
 .formulario_login legend {
     text-align: center; 
     font-size: 1.8rem; 
@@ -485,12 +490,16 @@ fieldset legend {
     color: var(--gris); 
 }
 
+
 .recuperar_pass {
     text-align: center;
+    display: block;
 }
+
 
 .letra_primario {
     color: var(--primario);
+    align-self: center;
 }
 
 .letra_gris {
@@ -542,6 +551,13 @@ fieldset legend {
 h4 {
     margin-left: 4rem;
     color: var(--gris);
+}
+
+.productos img{
+    width: 15rem;
+    height: 100%;
+    max-height: 150;
+
 }
 
 @media (min-width: 768px) {
