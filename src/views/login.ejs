@@ -1,36 +1,11 @@
 <html lang="en">
 	<head>
 		<%- include('./partials/head') %>
+		<link rel="stylesheet" href="css/login.css" />
 	</head>
-	<body class="body_registro">
-		<header class="heading">
-			<a href="#"><img class="logo" src="images/Logo corralon.png" alt="Logo" /></a>
-			<h1 class="titulo">Corralon Sanchez</h1>
-			<div class="buscador">
-				<input
-					class="buscador__input"
-					type="search"
-					id="search"
-					name="search"
-					placeholder="Buscar productos, marcas, etc."
-				/>
-				<button><img class="buscador__icono" src="images/search.png" alt="" /></button>
-			</div>
-			<div class="carrito-user">
-				<a href="#">
-					<img class="carrito" src="images/shopping-cart1.png" alt="icono_carrito"
-				/></a>
-				<a href="#"><img class="user" src="images/user1.png" alt="icono_user" /></a>
-			</div>
-		</header>
-		<div class="nav-bg">
-			<nav class="navegacion-principal contenedor">
-				<a href="#">Productos</a>
-				<a href="#">Ofertas</a>
-				<a href="#">Ayuda</a>
-				<a href="#">Contacto</a>
-			</nav>
-		</div>
+	<body class="body_login">
+		<!-- header -->
+		<%- include('./partials/header') %>
 		<main>
 			<section>
 				<form class="formulario_login">
@@ -63,8 +38,7 @@
 								<small class="letra_primario">No tiene una cuenta?</small>
 								<a href="#"><small class="letra_primario">Registrarse></small></a>
 							</div>
-						</div>
-						<!-- .contenedor-campos -->
+						</div> <!-- .contenedor-campos -->
 						<div class="alinear-derecha flex">
 							<input class="boton w-sm-100" type="submit" value="Iniciar Sesión" />
 						</div>

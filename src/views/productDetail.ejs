@@ -1,40 +1,16 @@
 <html lang="en">
 	<head>
 		<%- include('./partials/head') %>
+		<link rel="stylesheet" href="css/productDetail.css" />
+		<link rel="stylesheet" href="css/productos.css" />
 	</head>
 	<body>
-		<header class="heading">
-			<a href="#"><img class="logo" src="images/Logo corralon.png" alt="Logo" /></a>
-			<h1 class="titulo">Corralon Sanchez</h1>
-			<div class="buscador">
-				<input
-					class="buscador__input"
-					type="search"
-					id="search"
-					name="search"
-					placeholder="Buscar productos, marcas, etc."
-				/>
-				<button><img class="buscador__icono" src="images/search.png" alt="" /></button>
-			</div>
-			<div class="carrito-user">
-				<a href="#">
-					<img class="carrito" src="images/shopping-cart1.png" alt="icono_carrito"
-				/></a>
-				<a href="#"><img class="user" src="images/user1.png" alt="icono_user" /></a>
-			</div>
-		</header>
-		<div class="nav-bg">
-			<nav class="navegacion-principal contenedor">
-				<a href="#">Productos</a>
-				<a href="#">Ofertas</a>
-				<a href="#">Ayuda</a>
-				<a href="#">Contacto</a>
-			</nav>
-		</div>
+		<!-- header -->
+		<%- include('./partials/header') %>
 		<main class="contenedor">
 			<h1>Producto 1</h1>
 			<div class="prod_detail">
-				<img src="images/productos/prod1.jfif" alt="Imagen del Producto" />
+				<img  src="images/productos/prod1.jfif" alt="Imagen del Producto" />
 				<div class="form_detail">
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fringilla mi
@@ -62,7 +38,7 @@
 			<div class="destacados detalle__similares">
 				<div class="destacados__contenedor">
 					<section class="productos">
-						<img src="images/productos/prod1.jfif" alt="producto" />
+						<img class="imagen_producto" class="imagen_producto" src="images/productos/prod1.jfif" alt="producto" />
 						<h3>Producto 1</h3>
 						<p class="precio">Precio: $164564</p>
 						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
@@ -70,7 +46,7 @@
 				</div>
 				<div class="destacados__contenedor">
 					<section class="productos">
-						<img src="images/productos/prod2.webp" alt="producto" />
+						<img class="imagen_producto" class="imagen_producto" src="images/productos/prod2.webp" alt="producto" />
 						<h3>Producto 2</h3>
 						<p class="precio">Precio: $1638</p>
 						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
@@ -78,9 +54,17 @@
 				</div>
 				<div class="destacados__contenedor">
 					<section class="productos">
-						<img src="images/productos/prod3.jfif" alt="producto" />
+						<img class="imagen_producto" class="imagen_producto" src="images/productos/prod3.jfif" alt="producto" />
 						<h3>Producto 3</h3>
 						<p class="precio">Precio: $1645</p>
+						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
+					</section>
+				</div>
+				<div class="destacados__contenedor">
+					<section class="productos">
+						<img class="imagen_producto" src="images/productos/prod5.jfif" alt="producto" />
+						<h3>Producto 4</h3>
+						<p class="precio">Precio: $1234</p>
 						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
 					</section>
 				</div>

@@ -1,3 +1,4 @@
+
 .formulario__campo {
     border-width: 1rem;
     border-style: solid;
@@ -45,7 +46,7 @@ h4 {
 
 @media (min-width: 768px) {
     .detalle__similares {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        justify-content: space-between;
     }
 }
