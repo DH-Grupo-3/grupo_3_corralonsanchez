@@ -1,0 +1,113 @@
+.formulario {
+    background-color: var(--secundario);
+    width: min( 60rem, 100% ); 
+    margin: 6rem auto 4rem auto; 
+    padding: 2rem;
+    border-radius: 1rem;
+    -webkit-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
+    -moz-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
+    box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
+
+}
+.formulario fieldset {
+    border: none;
+}
+.formulario legend{
+    text-align: center; 
+    font-size: 1.8rem; 
+    text-transform: uppercase; 
+    font-weight: 700; 
+    margin-bottom: 2rem; 
+    color: var(--gris); 
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto auto auto;
+    gap: 2rem; 
+
+    }
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--gris);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo textarea {
+    height: 20rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+.flex {
+    display: flex;
+}
+
+.boton {
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding:1rem 3rem;
+    margin: 1rem auto;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+.boton:hover {
+    cursor: pointer;
+    background-color: var(--gris);
+    color: var(--primario);
+    
+}  
+
+.w-sm-100 {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.body_registro {
+    background-image: linear-gradient(to top, #a1a1a1 0%, white 100% );
+    width: 100%;
+    height: 100%;
+    justify-content: start;
+}
+
+.titulo_registro {
+    color: var(--gris);
+}
+
+fieldset legend {
+    margin: auto;
+}
+
