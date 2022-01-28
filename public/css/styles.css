@@ -54,7 +54,7 @@ article div img {
 }
 
 .precio {
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     margin: 0;
 }
 
@@ -406,13 +406,13 @@ footer h3 {
 
 }
 
-/* .alinear-derecha {
+ .alinear-derecha {
     justify-content: flex-end;
 }
 
 .flex {
     display: flex;
-} */
+} 
 
 .boton {
     background-color: var(--primario);
@@ -502,7 +502,8 @@ fieldset legend {
 
 .recuperar_pass {
     text-align: center;
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -571,7 +572,8 @@ h4 {
 
 @media (min-width: 768px) {
     .detalle__similares {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
