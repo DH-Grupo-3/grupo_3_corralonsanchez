@@ -12,9 +12,9 @@ html {
 	font-family: var(--fuente);
 }
 
-*,
-*::before,
-*::after {
+**,
+**::before,
+**::after {
 	box-sizing: inherit;
 }
 
