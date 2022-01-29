@@ -13,4 +13,6 @@ router.route('/productcart').get(controller.productCart);
 
 router.route('/productform').get(controller.productForm);
 
+router.route('/productedit').get(controller.productEdit);
+
 module.exports = router;

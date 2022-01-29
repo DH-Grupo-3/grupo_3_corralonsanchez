@@ -46,7 +46,8 @@ input.radio {
     margin-bottom: 1rem;
 }
 
-button.create-product {
+button.create-product,
+button.edit-product {
     display: flex;
     margin: auto;
     margin-bottom: 1rem;
@@ -73,7 +74,8 @@ button.create-product {
     label {
         font-size: 1.6rem;
     }
-    button.create-product {
+    button.create-product,
+    button.edit-product {
         cursor: pointer;
     }
 }
@@ -88,8 +90,15 @@ button.create-product {
     label {
         font-size: 1.8rem;
     }
-    button.create-product {
+    button.create-product,
+    button.edit-product {
         padding: 1rem;
         font-size: 1.4rem;
+    }
+    
+    button.create-product:hover,
+    button.edit-product:hover {
+        background-color: var(--gris);
+        color: var(--primario);
     }
 }

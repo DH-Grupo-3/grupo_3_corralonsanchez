@@ -24,3 +24,7 @@ exports.productCart = (req, res, next) => {
 exports.productForm = (req, res, next) => {
   res.render('productForm');
 };
+
+exports.productEdit = (req, res, next) => {
+  res.render('productEdit');
+};
