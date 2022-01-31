@@ -72,8 +72,8 @@
 
 }
 
-.alinear-derecha {
-    justify-content: flex-end;
+.alinear-centro {
+    justify-content: center;
 }
 
 .flex {
