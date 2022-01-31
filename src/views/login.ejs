@@ -3,20 +3,18 @@
 		<%- include('./partials/head') %>
 		<link rel="stylesheet" href="css/login.css" />
 	</head>
-<<<<<<< HEAD
+
 	<body class="body_login">
-=======
-	<body class="body_registro">
->>>>>>> e5db507778b196c53c793604b9419264d9d1f9d6
+
 		<!-- header -->
 		<%- include('./partials/header') %>
 		<main>
 			<section>
 				<form class="formulario_login">
-					<fieldset>
+					<!-- <fieldset> -->
 						<legend>Login</legend>
-						<div class="contenedor-campos-login">
-							<div class="campo">
+						<!-- <div class="contenedor-campos-login"> -->
+							<fieldset class="campo">
 								<label for="email">Correo</label>
 								<input
 									class="input-text"
@@ -24,12 +22,9 @@
 									id="email"
 									placeholder="Email"
 								/>
-							</div>
-							<div class="recuperar_pass">
-								<small class="letra_primario">¿Olvidaste tu contraseña?</small>
-								<a href="#"><small class="letra_gris">Recuperarla</small></a>
-							</div>
-							<div class="campo">
+							</fieldset>
+							
+							<fieldset class="campo">
 								<label for="pass">Contraseña</label>
 								<input
 									class="input-text"
@@ -37,15 +32,19 @@
 									id="pass"
 									placeholder="Contraseña"
 								/>
-							</div>
-							<div class="recuperar_pass">
-								<small class="letra_primario">No tiene una cuenta?</small>
-								<a href="#"><small class="letra_primario">Registrarse></small></a>
-							</div>
-						</div> <!-- .contenedor-campos -->
-						<div class="alinear-derecha flex">
-							<input class="boton w-sm-100" type="submit" value="Iniciar Sesión" />
-						</div>
+
+							</fieldset>
+							<nav class="recuperar_pass">								
+								<a href="#"><small class="letra_primario">¿Olvidaste tu contraseña?</small></a>
+													
+								<a href="#"><small class="letra_primario">No tiene una cuenta? Registrarse></small></a>
+							</nav>
+						
+						<!-- .contenedor-campos -->
+						<!-- <div class="alinear-derecha flex"> -->
+							<button class="boton w-sm-100" type="button" value="Iniciar Sesión">Iniciar Sesión</button>
+						<!-- </div> -->
+
 					</fieldset>
 				</form>
 			</section>

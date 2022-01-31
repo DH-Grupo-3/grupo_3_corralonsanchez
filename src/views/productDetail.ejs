@@ -8,10 +8,12 @@
 		<!-- header -->
 		<%- include('./partials/header') %>
 		<main class="contenedor">
-			<h1>Producto 1</h1>
-			<div class="prod_detail">
-				<img  src="images/productos/prod1.jfif" alt="Imagen del Producto" />
-				<div class="form_detail">
+			<!-- <h1>Producto 1</h1> -->
+			<section class="prod_detail">
+				<img src="images/productos/prod1.jfif" alt="Imagen del Producto" />
+				<article class="form_detail">
+					<h1>Producto 1</h1>
+
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fringilla mi
 						non condimentum malesuada. Sed hendrerit, leo in porttitor commodo, mauris
@@ -30,45 +32,48 @@
 							value="Agregar al Carrito"
 						/>
 					</form>
-				</div>
-			</div>
+				</article>
+			</section>
 			<section>
 				<h4>Quienes vieron éste producto tambien buscaron</h4>
 			</section>
-			<div class="destacados detalle__similares">
-				<div class="destacados__contenedor">
-					<section class="productos">
-						<img class="imagen_producto" class="imagen_producto" src="images/productos/prod1.jfif" alt="producto" />
+
+			<section class="destacados detalle__similares">
+				<article class="destacados__contenedor productos">
+				
+						<img class="imagen_producto" src="images/productos/prod1.jfif" alt="producto" />
 						<h3>Producto 1</h3>
 						<p class="precio">Precio: $164564</p>
 						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
-					</section>
-				</div>
-				<div class="destacados__contenedor">
-					<section class="productos">
-						<img class="imagen_producto" class="imagen_producto" src="images/productos/prod2.webp" alt="producto" />
+				
+				</article>
+				<article class="destacados__contenedor productos">
+				
+						<img class="imagen_producto" src="images/productos/prod2.webp" alt="producto" />
 						<h3>Producto 2</h3>
 						<p class="precio">Precio: $1638</p>
 						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
-					</section>
-				</div>
-				<div class="destacados__contenedor">
-					<section class="productos">
-						<img class="imagen_producto" class="imagen_producto" src="images/productos/prod3.jfif" alt="producto" />
+				
+				</article>
+				<article class="destacados__contenedor productos" >
+				
+						<img class="imagen_producto" src="images/productos/prod3.jfif" alt="producto" />
 						<h3>Producto 3</h3>
 						<p class="precio">Precio: $1645</p>
 						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
-					</section>
-				</div>
-				<div class="destacados__contenedor">
-					<section class="productos">
-						<img class="imagen_producto" src="images/productos/prod5.jfif" alt="producto" />
-						<h3>Producto 4</h3>
-						<p class="precio">Precio: $1234</p>
-						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
-					</section>
-				</div>
-			</div>
+				
+				</article>
+
+				<article class="destacados__contenedor productos" >
+				
+					<img class="imagen_producto" src="images/productos/prod3.jfif" alt="producto" />
+					<h3>Producto 3</h3>
+					<p class="precio">Precio: $1645</p>
+					<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
+			
+			</article>
+			</section>
+
 			<!-- Destacados -->
 		</main>
 	</body>
