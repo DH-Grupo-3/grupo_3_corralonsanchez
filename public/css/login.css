@@ -7,11 +7,12 @@
     -webkit-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
     -moz-box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
     box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
-
 }
+
 .formulario_login fieldset {
     border: none;
 }
+
 .formulario_login legend {
     text-align: center; 
     font-size: 1.8rem; 
@@ -23,6 +24,8 @@
 
 .recuperar_pass {
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .letra_primario {
@@ -36,6 +39,7 @@
 .w-sm-100 {
     width: 100%;
 }
+
 @media (min-width: 768px) {
     .w-sm-100 {
         width: auto;
@@ -89,6 +93,7 @@
     text-align: center;
     border: none;
 }
+
 @media (min-width: 768px) {
     .boton {
         width: auto;
@@ -98,7 +103,6 @@
     cursor: pointer;
     background-color: var(--gris);
     color: var(--primario);
-    
 }
 
 
