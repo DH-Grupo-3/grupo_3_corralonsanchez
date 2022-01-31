@@ -66,9 +66,9 @@ a {
 	margin: 0;
 }
 .contenedor{
-    /* max-width: 120rem;   */
+   /* max-width: 120rem; 
     margin: 0 auto;
-}
+}*/
 .navegacion-principal {
     display: flex;
     flex-direction: column;
