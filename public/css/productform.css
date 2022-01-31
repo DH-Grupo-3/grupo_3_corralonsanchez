@@ -1,0 +1,104 @@
+.body-productform {
+    background-image: radial-gradient(circle, #a1a1a1, white);
+}
+
+.product-form {
+    width: min(60rem, 90%); 
+    background-color: var(--secundario);
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
+}
+
+.product-form h3 {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1.7rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+label, input, textarea, select {
+    width: 100%;
+    margin: 0.5rem;
+}
+
+label {
+    font-size: 1.4rem;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+input.radio {
+    width: 50%;
+} 
+
+.product-form fieldset {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+button.create-product,
+button.edit-product {
+    display: flex;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    color: var(--blanco);
+    background-color: var(--primario);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+@media (min-width: 480px){
+    .product-form {
+        width: min(60rem, 75%); 
+    }
+    .product-form h3 {
+        font-size: 2rem;
+    }
+    input, textarea, select {
+        width: 90%;
+    }
+    label {
+        font-size: 1.6rem;
+    }
+    button.create-product,
+    button.edit-product {
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 980px){
+    .product-form {
+        width: min(60rem, 50%); 
+    }
+    .product-form h3 {
+        font-size: 2.3rem;
+    }
+    label {
+        font-size: 1.8rem;
+    }
+    button.create-product,
+    button.edit-product {
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+    
+    button.create-product:hover,
+    button.edit-product:hover {
+        background-color: var(--gris);
+        color: var(--primario);
+    }
+}
