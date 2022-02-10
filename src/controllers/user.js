@@ -1,7 +1,7 @@
 const path = require('path');
 const views = path.join(__dirname, '../views');
 
-const { match, list, generate, create, update, trash } = require('../models/user');
+const { match, list, generate, create, update, trash, filter } = require('../models/user');
 
 const controller = {
 	index: (req, res) => {
