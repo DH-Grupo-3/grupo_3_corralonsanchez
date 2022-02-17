@@ -14,6 +14,7 @@ app.use(cors());
 app.use(morgan('dev'));
 
 app.use(express.static(path.resolve(__dirname, '../public')));
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/', router);
 app.use('/users', require('./routers/users'));
