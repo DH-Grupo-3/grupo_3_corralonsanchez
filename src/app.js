@@ -16,5 +16,6 @@ app.use(morgan('dev'));
 app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.use('/', router);
+app.use('/users', require('./routers/users'));
 
 module.exports = app;
