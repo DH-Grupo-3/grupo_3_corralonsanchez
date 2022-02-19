@@ -12,9 +12,14 @@ router.route('/productdetail').get(controller.productDetail);
 router.route('/productcart').get(controller.productCart);
 
 router.route('/productform').get(controller.productForm);
-
+    
 router.route('/productedit').get(controller.productEdit);
 
-router.route('/productList').get(controller.productList);
+router.route('/productList')
+    .get(controller.productList)
+    .post(controller.storage)
+    .put(controller.modify);
 
+router.route('/productedit/:id').get(controller.update);
+    
 module.exports = router;
