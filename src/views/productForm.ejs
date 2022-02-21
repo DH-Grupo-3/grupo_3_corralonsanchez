@@ -7,19 +7,19 @@
 		<!-- header -->
 		<%- include('./partials/header') %>
         <main>
-            <form class="product-form">
+            <form action="/productDetail" method="POST" class="product-form">
                 <h3>Carga de productos</h3>
                 <fieldset>
                     <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="product-name">
+                    <input type="text" id="name" name="product_name">
                 </fieldset>
                 <fieldset>
                     <label for="description">Caracteristicas:</label>
-                    <textarea name="product-description" id="description"></textarea>
+                    <textarea name="product_description" id="description"></textarea>
                 </fieldset>
                 <fieldset>
                     <label for="">Imagen:</label>
-                    <input type="file" name="product-image" accept=".jpg, .png, .tiff">  
+                    <input type="file" name="product_image" accept=".jpg, .png, .tiff">  
                 </fieldset>
                 <fieldset>
                     <label for="category">Categoria:</label>
@@ -33,12 +33,16 @@
                 </fieldset> 
                 <fieldset>
                     <label for="price">Precio:</label>
-                    <input type="number" id="price" name="product-price">
+                    <input type="number" id="price" name="product_price">
+                </fieldset>
+                <fieldset>
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" name="product_stock">
                 </fieldset>
                 <fieldset>
                 <label>¿Esta en oferta?</label>
-                    <input class="radio" type="radio" name="ofert" value="si">Si
-                    <input class="radio" type="radio" name="ofert" value="no">No
+                    <input class="radio" type="radio" name="ofer" value=true>Si
+                    <input class="radio" type="radio" name="ofer" value=false>No
                 </fieldset>
 
                 <button class="create-product">Crear producto</button>
