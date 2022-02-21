@@ -1,4 +1,4 @@
-const { readFileSync, writeFileSync, unlink, existsSync } = require('fs');
+const { readFileSync, writeFileSync, unlinkSync, existsSync } = require('fs');
 const { resolve } = require('path');
 
 const model = {
@@ -9,39 +9,65 @@ const model = {
 	list: () => {
 		return JSON.parse(model.read());
 	},
+	convert: (data) => JSON.stringify(data, null, 2),
+	write: (data) => writeFileSync(model.file, model.convert(data)),
 	all: () => {
 		return model.list().filter((product) => product.stock > 0);
 	},
 	filter: (property, value) => {
 		return model.all().filter((product) => {
-			typeof value !== 'string' ? product[property] === value : product[property].include('value');
+			typeof value !== 'string' ? product[property] == value : product[property].includes(value);
 		});
 	},
 	match: (property, value) => {
 		return model.all().find((product) => {
-			product[property] === value;
+			return product[property] == value;
 		});
 	},
-	generate: (data) => {
-		const nProduct = {
+	generate: (data) =>
+		Object({
 			id:
-				model.list().length() > 0
+				model.list().length > 0
 					? model
 							.list()
 							.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
 							.pop().id + 1
 					: 1,
-			name: data.name,
-			description: data.description,
-			price: data.price,
-			category: [],
-			image: data.image,
-			stock: data.stock,
-			offer: data.offer,
-		};
-		return nProduct;
+			name: data.product_name,
+			description: data.product_description,
+			price: Number(data.product_price),
+			category: data.category,
+			stock: Number(data.product_stock),
+			ofer: data.ofer === '1',
+			image: data.file && data.file.length > 0 ? data.file.map((file) => file.filename) : null,
+		}),
+	create: (data) => {
+		let lista = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+		lista.push(data);
+		model.write(lista);
 	},
-	create: (data) => {},
+	update: (data) => {
+		let products = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+		products = products.map((product) => {
+			if (product.id == data.id) {
+				product.name = data.product_name;
+				product.price = Number(data.product_price);
+				product.description = data.product_description;
+				(product.category = data.category), (product.stock = Number(data.product_stock));
+				product.ofer = data.ofer === '1';
+				product.file =
+					data.file && data.file.length > 0 ? data.file.map((file) => file.filename) : null;
+				return product;
+			}
+			console.log(product);
+			return product;
+		});
+		model.write(products);
+	},
+	// trash: id => {
+	//     let productos = model.list().sort((a,b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+	//     model.write(productos.filter(producto => producto.id != id));
+	// }
 };
 
 module.exports = model;
