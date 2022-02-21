@@ -31,7 +31,7 @@ exports.productEdit = (req, res, next) => {
 };
 
 exports.productList = (req, res, next) => {
-	res.render('productList');
+	res.render('productList', { products: model.list() });
 };
 
 exports.storage = (req, res) => {
@@ -53,3 +53,8 @@ exports.modify = (req, res) => {
 	model.update(req.body);
 	return res.redirect("/productList")
 };
+
+exports.trash = (req, res) => {
+	model.trash(req.body.id);
+	return res.redirect("/productList");
+}

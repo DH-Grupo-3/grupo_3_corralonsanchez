@@ -7,7 +7,9 @@ router.route('/login').get(controller.login);
 
 router.route('/register').get(controller.register);
 
-router.route('/productdetail').get(controller.productDetail);
+router.route('/productdetail')
+    .get(controller.productDetail)
+    .post(controller.storage);
 
 router.route('/productcart').get(controller.productCart);
 
@@ -17,8 +19,9 @@ router.route('/productedit').get(controller.productEdit);
 
 router.route('/productList')
     .get(controller.productList)
-    .post(controller.storage)
-    .put(controller.modify);
+    // .post(controller.storage)
+    .put(controller.modify)
+    .delete(controller.trash);
 
 router.route('/productedit/:id').get(controller.update);
     

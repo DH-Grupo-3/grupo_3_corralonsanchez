@@ -1,22 +1,22 @@
 [
   {
     "id": "1",
-    "name": "Ítem 1",
+    "name": "Producto",
     "description": "Producto de prueba",
-    "price": 55008.66,
-    "category": "Categoría 1",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIuSURBVDjLjZPBaxpBFMY/E5u1MdZuNFgVaqsHoSCE0BzEm6eehFxaafGQQ1oCtodCj14tFq8pveVP8NCTUForCLnYSwVbexHrrhFtm4jiqjuznRkxRDDBgeENb9/83vfe24FhGFhmt8JhY5F/BUuuj/v7C/0mTpmtarVqEEKg6zpmlu9Op4NSqQSPx4NAIIBYLGaa3TFfpk0mE/j9fnG+DObnaDQqbD6fn1MwB+DZ+Pryc1oZYQxCAWpQpgh49EDHaDS6GjAej0WWnTv/FjYSuL0c4KQpi6w6nSrQWXZKDext69A07XoAX7vu7hXjlK9XwD/ywK/1TVa/IRRQMu2FwRQ8eTi5XsE5OcNwOIR0WkSj0YDD4UC33UYkEoHNZsPx8ScxynQ6/VdRlLeVSuX9BeDNyeE9s03Cea4nxplIJDAYDNBsNlEoFGC32/n8YTab0Wq15HK5/I4l2boAUErv/6mdAb8bePz0GVKpFA+E2+1GKBQS52w2C7WlYsNh/fby4NUOAzwXgNelF7dM1PRZq4+xvrEugPyHqtfriMfjkGUZ/X5f/JFHH45AtkebPIapkgSA6OSQ6NTor/VM6qkiALVfNa4KmUwGVqtV+HhJYI1d+37zLnYB1gdNvIVkMmnMAnq9HsLhMLxeLywWC9qsibVaDZIkwefzweVyYagNoSoqisXij7nHFAwGV1nNIZYxx7q9xS6tMvdKt9s9YFZxOp05Zm+wcRNVVTss4d5/6EF77ncyqQUAAAAASUVORK5CYII=",
-    "stock": 100,
-    "ofer": false
+    "price": 600,
+    "category": "category 2",
+    "image": null,
+    "stock": 120,
+    "ofer": "false"
   },
   {
-    "id": 2,
+    "id": "11",
     "name": "Cemento",
-    "description": "Bolsa de cemento 50 kg",
-    "price": 800,
-    "category": "category 3",
+    "description": "Bolsa de cemento de 50kg",
+    "price": 600,
+    "category": "category 2",
     "image": null,
-    "stock": 50,
-    "file": null
+    "stock": 120,
+    "ofer": "false"
   }
 ]
