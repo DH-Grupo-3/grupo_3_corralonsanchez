@@ -33,11 +33,32 @@ label {
 textarea {
     resize: none;
     height: 100px;
+    border:none;
+    box-shadow: 5px, #a1a1a1;
 }
 
 input.radio {
     width: 50%;
 } 
+
+.product-form input{
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+}
+
+.product-form select{
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+}
+
+.product-form input.radio{
+    border: none;
+    height: 20px;
+    padding: 0;
+
+}
 
 .product-form fieldset {
     border: none;
