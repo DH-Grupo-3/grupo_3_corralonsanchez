@@ -18,3 +18,8 @@ Una vez finalizado el Sprint 2, con la retrospectiva llegamos a las siguientes c
  - Como actividad a mejorar podemos considerar el manejo de los tiempos, ya que la prórroga que tuvimos para la entrega
  nos ayudó a mejorar algunos aspectos que quizás no hubieramos llegado a cumplir en el tiempo estipulado originalmente.
  
+
+En términos generales, logramos cumplir con los requerimientos establecidos del Sprint 3 dentro del período de tiempo estipulado, por lo que consideramos que manejamos un poco mejor el tiempo dado para efectuar las tareas del mismo.
+En el desarrollo de esta etapa también tuvimos que replantear las vistas generadas en el sprint anterior, tarea que nos generó algunos inconvenientes. Para subsanar los problemas generados, optamos por la implementación de una mayor cantidad de reuniones con el equipo completo, y haciendo pruebas en el momento de generar los cambios hasta conseguir que todo siga funcionando como al principio.
+
+
