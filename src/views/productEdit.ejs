@@ -1,29 +1,30 @@
 <html lang="en">
 	<head>
 		<%- include('./partials/head') %>
-        <link rel="stylesheet" href="css/productform.css">
+        <link rel="stylesheet" href="/css/productform.css">
 	</head>
 	<body class="body-productform">
 		<!-- header -->
 		<%- include('./partials/header') %>
         <main>
-            <form class="product-form">
+            <form action="/productList?m=PUT" method="post" class="product-form">
                 <h3>Edición de productos</h3>
+                <input type="hidden" name="id" value="<%= product.id %>">
                 <fieldset>
                     <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="product-name">
+                    <input type="text" id="name" name="product_name" value="<%= product.name %>">
                 </fieldset>
                 <fieldset>
                     <label for="description">Caracteristicas:</label>
-                    <textarea name="product-description" id="description"></textarea>
+                    <textarea name="product_description" id="description"><%= product.description %></textarea>
                 </fieldset>
                 <fieldset>
                     <label for="">Imagen:</label>
-                    <input type="file" name="product-image" accept=".jpg, .png, .tiff">  
+                    <input type="file" name="product_image" accept=".jpg, .png, .tiff" value="<%= product.image %>">  
                 </fieldset>
                 <fieldset>
                     <label for="category">Categoria:</label>
-                    <select name="category" id="category">
+                    <select name="category" id="category" value="<%= product.category %>">
                         <option value="category 1">Categoria 1</option>
                         <option value="category 2">Categoria 2</option>
                         <option value="category 3">Categoria 3</option>
@@ -33,12 +34,16 @@
                 </fieldset> 
                 <fieldset>
                     <label for="price">Precio:</label>
-                    <input type="number" id="price" name="product-price">
+                    <input type="number" id="price" name="product_price" value="<%= product.price %>">
+                </fieldset>
+                <fieldset>
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" name="product_stock" value="<%= product.stock %>">
                 </fieldset>
                 <fieldset>
                 <label>¿Esta en oferta?</label>
-                    <input class="radio" type="radio" name="ofert" value="si">Si
-                    <input class="radio" type="radio" name="ofert" value="no">No
+                    <input class="radio" type="radio" name="ofer" value="<%- product.ofer %>">Si
+                    <input class="radio" type="radio" name="ofer" value="<%- product.ofer %>">No
                 </fieldset>
 
                 <button class="edit-product">Editar producto</button>
