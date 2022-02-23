@@ -1,8 +1,8 @@
 <html lang="es">
 	<head>
 		<%- include('./partials/head') %>
-		<link rel="stylesheet" href="css/footer.css" />
-		<link rel="stylesheet" href="css/productos.css" />
+		<link rel="stylesheet" href="/css/footer.css" />
+		<link rel="stylesheet" href="/css/productos.css" />
 	</head>
 
 	<body>
@@ -22,11 +22,11 @@
 							<nav>
 								<a class="boton_editar" href="/productedit/<%= product.id %>">Editar</a>
 							</nav>
-							<form action="/productList?m=DELETE" method="post">
+							<form class="eliminar" action="/productList?m=DELETE" method="post">
 								<input type="hidden" name="id" value="<%= product.id %>">
 								<button class="boton_eliminar" type="submit">Eliminar</button>   
 							</form>
-				</article>
+						</article>
 					<% }) %>
 				<% } %>
 			</section>
