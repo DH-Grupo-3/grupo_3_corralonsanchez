@@ -1,9 +1,6 @@
 const path = require('path');
 const views = path.join(__dirname, '../views');
 const model = require('../models/product');
-const multer = require('multer');
-const folder = require('../middlewares/storage');
-const upload = multer({ storage: folder('products') });
 
 exports.getIndex = (req, res, next) => {
 	res.render('index');
@@ -34,7 +31,7 @@ exports.productEdit = (req, res, next) => {
 };
 
 exports.productList = (req, res, next) => {
-	res.render('productList');
+	res.render('productList', { products: model.list() });
 };
 
 exports.storage = (req, res) => {
@@ -56,5 +53,10 @@ exports.update = (req, res) => {
 exports.modify = (req, res) => {
 	// req.body.files = req.files;
 	model.update(req.body);
+	return res.redirect('/productList');
+};
+
+exports.trash = (req, res) => {
+	model.trash(req.body.id);
 	return res.redirect('/productList');
 };

@@ -59,15 +59,14 @@ const model = {
 					data.file && data.file.length > 0 ? data.file.map((file) => file.filename) : null;
 				return product;
 			}
-			console.log(product);
 			return product;
 		});
 		model.write(products);
 	},
-	// trash: id => {
-	//     let productos = model.list().sort((a,b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
-	//     model.write(productos.filter(producto => producto.id != id));
-	// }
+	trash: (id) => {
+		let productos = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+		model.write(productos.filter((producto) => producto.id != id));
+	},
 };
 
 module.exports = model;
