@@ -3,12 +3,9 @@ const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 const router = require('./routers/router');
+const productRouter = require('./routers/product');
 const path = require('path');
 const method = require('method-override');
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({ limit: '50mb' }));
 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
@@ -19,10 +16,12 @@ app.use(cors());
 app.use(morgan('dev'));
 
 app.use(express.static(path.resolve(__dirname, '../public')));
+app.use(express.static(path.resolve(__dirname, '../uploads')));
 app.use(express.urlencoded({ extended: true }));
 app.use(method('m'));
 
 app.use('/', router);
+app.use('/products', productRouter);
 app.use('/users', require('./routers/users'));
 
 module.exports = app;

@@ -1,8 +1,8 @@
 <html lang="en">
 	<head>
 		<%- include('./partials/head') %>
-		<link rel="stylesheet" href="css/productDetail.css" />
-		<link rel="stylesheet" href="css/productos.css" />
+		<link rel="stylesheet" href="/css/productDetail.css" />
+		<link rel="stylesheet" href="/css/productos.css" />
 	</head>
 	<body>
 		<!-- header -->
@@ -10,21 +10,18 @@
 		<main class="contenedor">
 			<!-- <h1>Producto 1</h1> -->
 			<section class="prod_detail">
-				<img src="images/productos/prod1.jfif" alt="Imagen del Producto" />
+				<img src="/products/<%= product.image[0] %> " alt="Imagen del Producto" />
 				<article class="form_detail">
-					<h1>Producto 1</h1>
+					<h1><%= product.name %></h1>
 
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fringilla mi
-						non condimentum malesuada. Sed hendrerit, leo in porttitor commodo, mauris
-						orci blandit libero, sit amet consectetur libero nisi porttitor orci.
-					</p>
+					<p><%= product.description %></p>
 					<form>
 						<input
 							class="formulario__campo mg_bt"
 							type="number"
 							placeholder="Cantidad"
 							min="1"
+							max="<%= product.stock %>"
 						/>
 						<input
 							class="formulario__submit"
@@ -40,38 +37,46 @@
 
 			<section class="destacados detalle__similares">
 				<article class="destacados__contenedor productos">
-				
-						<img class="imagen_producto" src="images/productos/prod1.jfif" alt="producto" />
-						<h3>Producto 1</h3>
-						<p class="precio">Precio: $164564</p>
-						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
-				
+					<img
+						class="imagen_producto"
+						src="/images/productos/prod1.jfif"
+						alt="producto"
+					/>
+					<h3>Producto 1</h3>
+					<p class="precio">Precio: $164564</p>
+					<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
 				</article>
 				<article class="destacados__contenedor productos">
-				
-						<img class="imagen_producto" src="images/productos/prod2.webp" alt="producto" />
-						<h3>Producto 2</h3>
-						<p class="precio">Precio: $1638</p>
-						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
-				
+					<img
+						class="imagen_producto"
+						src="/images/productos/prod2.webp"
+						alt="producto"
+					/>
+					<h3>Producto 2</h3>
+					<p class="precio">Precio: $1638</p>
+					<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
 				</article>
-				<article class="destacados__contenedor productos" >
-				
-						<img class="imagen_producto" src="images/productos/prod3.jfif" alt="producto" />
-						<h3>Producto 3</h3>
-						<p class="precio">Precio: $1645</p>
-						<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
-				
-				</article>
-
-				<article class="destacados__contenedor productos" >
-				
-					<img class="imagen_producto" src="images/productos/prod3.jfif" alt="producto" />
+				<article class="destacados__contenedor productos">
+					<img
+						class="imagen_producto"
+						src="/images/productos/prod3.jfif"
+						alt="producto"
+					/>
 					<h3>Producto 3</h3>
 					<p class="precio">Precio: $1645</p>
 					<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
-			
-			</article>
+				</article>
+
+				<article class="destacados__contenedor productos">
+					<img
+						class="imagen_producto"
+						src="/images/productos/prod3.jfif"
+						alt="producto"
+					/>
+					<h3>Producto 3</h3>
+					<p class="precio">Precio: $1645</p>
+					<p class="descrip">Descripcion: Nullam sed vestibulum odio.</p>
+				</article>
 			</section>
 
 			<!-- Destacados -->

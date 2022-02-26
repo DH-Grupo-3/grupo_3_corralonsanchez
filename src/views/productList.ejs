@@ -1,34 +1,36 @@
 <html lang="es">
 	<head>
 		<%- include('./partials/head') %>
-		<link rel="stylesheet" href="css/footer.css" />
-		<link rel="stylesheet" href="css/productos.css" />
+		<link rel="stylesheet" href="/css/footer.css" />
+		<link rel="stylesheet" href="/css/productos.css" />
 	</head>
 
 	<body>
 		<!-- header -->
 		<%- include('./partials/header') %>
 		<main>
-				<h2>Productos</h2>
-			
+			<h2>Productos</h2>
+
 			<section class="destacados">
-				<% if (products.length > 0) { %>
-					<% products.forEach(product => { %>
-						<article class="destacados__contenedor productos">
-							<img class="imagen_producto" src="images/productos/prod1.jfif" alt="producto" />
-							<h3><%= product.name %></h3>
-							<p class="precio">Precio: $ <%= product.price %></p>
-							<p class="descrip"><%= product.description %></p>
-							<nav>
-								<a class="boton_editar" href="/productedit/<%= product.id %>">Editar</a>
-							</nav>
-							<form action="/productList?m=DELETE" method="post">
-								<input type="hidden" name="id" value="<%= product.id %>">
-								<button class="boton_eliminar" type="submit">Eliminar</button>   
-							</form>
+				<% if (products.length > 0) { %> <% products.forEach(product => { %>
+				<article class="destacados__contenedor productos">
+					<img
+						class="imagen_producto"
+						src="/images/productos/prod1.jfif"
+						alt="producto"
+					/>
+					<h3><%= product.name %></h3>
+					<p class="precio">Precio: $ <%= product.price %></p>
+					<p class="descrip"><%= product.description %></p>
+					<nav>
+						<a class="boton_editar" href="/products/<%= product.id %>">Editar</a>
+					</nav>
+					<form class="eliminar" action="/productList?m=DELETE" method="post">
+						<input type="hidden" name="id" value="<%= product.id %>" />
+						<button class="boton_eliminar" type="submit">Eliminar</button>
+					</form>
 				</article>
-					<% }) %>
-				<% } %>
+				<% }) %> <% } %>
 			</section>
 			<!-- Destacados -->
 		</main>

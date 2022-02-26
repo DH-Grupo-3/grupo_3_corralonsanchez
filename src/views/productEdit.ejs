@@ -7,7 +7,12 @@
 		<!-- header -->
 		<%- include('./partials/header') %>
 		<main>
-			<form action="/productList?m=PUT" method="post" class="product-form">
+			<form
+				action="/products/<% product.id %> ?m=PUT"
+				method="post"
+				class="product-form"
+				enctype="multipart/form-data"
+			>
 				<h3>Edición de productos</h3>
 				<input type="hidden" name="id" value="<%= product.id %>" />
 				<fieldset>
@@ -58,9 +63,11 @@
 					/>
 				</fieldset>
 				<fieldset>
-					<label>¿Esta en oferta?</label>
+					<label>¿Esta en oferta?</label><% if (product.ofer) { %>
+					<input class="radio" type="radio" name="ofer" value="1" checked /> Si
+					<input class="radio" type="radio" name="ofer" value="0" /> No <% } else { %>
 					<input class="radio" type="radio" name="ofer" value="1" /> Si
-					<input class="radio" type="radio" name="ofer" value="0" /> No
+					<input class="radio" type="radio" name="ofer" value="0" checked /> No <% } %>
 				</fieldset>
 
 				<button class="edit-product">Editar producto</button>

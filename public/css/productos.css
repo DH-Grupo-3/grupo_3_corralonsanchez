@@ -3,8 +3,9 @@
 .productos {
 	width: 100%;
 	height: 100%;
-	border: solid rgb(105, 105, 105) 0.2rem;
+	border: solid rgb(211, 211, 211) 0.1rem;
 	transition: all 250ms;
+	border-radius: 5%;
 }
 
 .productos:hover {
@@ -49,10 +50,7 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	};
-	/* .boton_editar:hover {
-		color: var(--primario);
-		text-decoration: underline;
-	}; */
+
 }
 @media (min-width: 980px) {
 	.destacados {
@@ -74,11 +72,41 @@
 }
 
 .descrip {
-	font-size: 1.6rem;
-	padding: 1rem;
+	font-size: 1.4rem;
+	padding: 0.5rem;
 	margin: 0;
     width: 100%;
 }
 
+a.boton_editar {
+	color: var(--gris);
+	text-decoration: underline; 
+	font-size: 14.5px;
+};
+
+.eliminar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+form button.boton_eliminar {
+	margin-top: 10px;
+	border: 1.5px solid var(--primario);
+	border-radius: 8%;
+	padding: 2px 3px;
+	color: var(--blanco);
+	background-color: var(--primario); 
+	font-weight: bold;
+}
+
+@media (min-width: 768px) {
+	form button.boton_eliminar:hover {
+		color: var(--primario);
+		background-color: var(--gris);
+		border-color: var(--gris)
+	}
+}
 
 

@@ -37,15 +37,10 @@ const model = {
 			description: data.product_description,
 			price: Number(data.product_price),
 			category: data.category,
+			image: data.files && data.files.length > 0 ? data.files.map((file) => file.filename) : null,
 			stock: Number(data.product_stock),
 			ofer: data.ofer === '1',
-			image: data.file && data.file.length > 0 ? data.file.map((file) => file.filename) : null,
 		}),
-	create: (data) => {
-		let lista = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
-		lista.push(data);
-		model.write(lista);
-	},
 	update: (data) => {
 		let products = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 		products = products.map((product) => {
@@ -55,13 +50,18 @@ const model = {
 				product.description = data.product_description;
 				(product.category = data.category), (product.stock = Number(data.product_stock));
 				product.ofer = data.ofer === '1';
-				product.file =
-					data.file && data.file.length > 0 ? data.file.map((file) => file.filename) : null;
+				product.image =
+					data.files && data.files.length > 0 ? data.files.map((file) => file.filename) : null;
 				return product;
 			}
 			return product;
 		});
 		model.write(products);
+	},
+	create: (data) => {
+		let lista = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+		lista.push(data);
+		model.write(lista);
 	},
 	trash: (id) => {
 		let productos = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
