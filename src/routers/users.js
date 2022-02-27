@@ -1,12 +1,21 @@
-const router = require('express').Router();
+const { Router } = require('express');
+const router = Router();
+const { body } = require('express-validator');
 const { show, index, create, storage } = require('../controllers/user');
 
-router.route('/list').get(index);
+// Validaciones
+const validateForm = [
+	body('full_name').notEmpty().withMessage('Debes introducir tú nombre completo'),
+	body('email').notEmpty().isEmail().withMessage('Debes introducir un email válido'),
+	body('password').notEmpty().withMessage('Debes introducir una contraseña válida'),
+	body('dni').notEmpty().withMessage('Debes introducir DNI'),
+	body('date_of_birth').notEmpty().withMessage('Debes introducir fecha de nacimiento'),
+];
 
-router.route('/register').get(create);
+router.get('/list', index);
 
-router.route('/register').post(storage);
+router.get('/register', create);
 
-router.route('/:id').get(show);
+router.post('/register', validateForm, storage), router.get('/:id', show);
 
 module.exports = router;
