@@ -35,6 +35,9 @@
     margin: auto;
     width: 90%;
 }
+.form_detail h1{
+    text-align: start;
+}
 
 .mg_bt{
     margin-bottom: 1rem;
@@ -49,4 +52,7 @@ h4 {
         display: flex;
         justify-content: space-between;
     }
+}
+.img_detail{
+    max-width: 100%;
 }
