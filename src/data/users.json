@@ -1,162 +1,178 @@
 [
-    {
-        "id":1,
-        "full_name":"Friedrick Wordington",
-        "email":"fwordington0@sbwire.com",
-        "password":"cgyuTq",
-        "dni":"1821580044",
-        "date_of_birth":"23/06/2007"
-    },
-    {
-        "id":2,
-        "full_name":"Thorpe Perroni",
-        "email":"tperroni1@linkedin.com",
-        "password":"x1JZ5nTU9f",
-        "dni":"6665094774",
-        "date_of_birth":"30/12/2009"
-    },
-    {
-        "id":3,
-        "full_name":"Raven Gwinn",
-        "email":"rgwinn2@wiley.com",
-        "password":"pSRXn4QiNVjI",
-        "dni":"6248714622",
-        "date_of_birth":"04/12/1998"
-    },
-    {
-        "id":4,
-        "full_name":"Valerie Chaffen",
-        "email":"vchaffen3@wisc.edu",
-        "password":"Jp4NOY5EFZG",
-        "dni":"1807253074",
-        "date_of_birth":"17/04/1942"
-    },
-    {
-        "id":5,
-        "full_name":"Clemente Pender",
-        "email":"cpender4@w3.org",
-        "password":"jfYjArUH",
-        "dni":"0208277064",
-        "date_of_birth":"17/11/1994"
-    },
-    {
-        "id":6,
-        "full_name":"Eleen Pagel",
-        "email":"epagel5@google.pl",
-        "password":"5kLMxd",
-        "dni":"7316697725",
-        "date_of_birth":"14/10/2019"
-    },
-    {
-        "id":7,
-        "full_name":"Enrica Wilse",
-        "email":"ewilse6@disqus.com",
-        "password":"1ZXbqIx",
-        "dni":"9648200920",
-        "date_of_birth":"12/09/1955"
-    },
-    {
-        "id":8,
-        "full_name":"Tann Georgeon",
-        "email":"tgeorgeon7@who.int",
-        "password":"KwhxCDAp34B",
-        "dni":"9539335361",
-        "date_of_birth":"19/09/2018"
-    },
-    {
-        "id":9,
-        "full_name":"Gwenore Hallums",
-        "email":"ghallums8@bing.com",
-        "password":"4MoNrel6OLg",
-        "dni":"5267878588",
-        "date_of_birth":"20/04/2007"
-    },
-    {
-        "id":10,
-        "full_name":"Coletta Lazonby",
-        "email":"clazonby9@sciencedaily.com",
-        "password":"s9HkRpY0UJ",
-        "dni":"6244099923",
-        "date_of_birth":"20/05/1968"
-    },
-    {
-        "id":11,
-        "full_name":"Jacob Epple",
-        "email":"jepplea@salon.com",
-        "password":"RrHXl02",
-        "dni":"1194316468",
-        "date_of_birth":"28/09/1909"
-    },
-    {
-        "id":12,
-        "full_name":"Brennen Macy",
-        "email":"bmacyb@tamu.edu",
-        "password":"CoXWCgo",
-        "dni":"9357909575",
-        "date_of_birth":"21/05/1989"
-    },
-    {
-        "id":13,
-        "full_name":"Cully Ascraft",
-        "email":"cascraftc@geocities.com",
-        "password":"Q1CHqrnDn9ZZ",
-        "dni":"3770694309",
-        "date_of_birth":"21/12/1985"
-    },
-    {
-        "id":14,
-        "full_name":"Cecilio Wann",
-        "email":"cwannd@wisc.edu",
-        "password":"O2dT4gOVF4",
-        "dni":"5573198300",
-        "date_of_birth":"20/02/1998"
-    },
-    {
-        "id":15,
-        "full_name":"Jerrie Pinxton",
-        "email":"jpinxtone@blogspot.com",
-        "password":"vMIQkzW",
-        "dni":"3025665602",
-        "date_of_birth":"27/01/2011"
-    },
-    {
-        "id":16,
-        "full_name":"Cordelie McGregor",
-        "email":"cmcgregorf@gizmodo.com",
-        "password":"4CuBk3Dq",
-        "dni":"3049101571",
-        "date_of_birth":"16/07/1966"
-    },
-    {
-        "id":17,
-        "full_name":"Gradeigh Skudder",
-        "email":"gskudderg@fastcompany.com",
-        "password":"Zg4WEQMR5uLZ",
-        "dni":"8113164553",
-        "date_of_birth":"25/07/1903"
-    },
-    {
-        "id":18,
-        "full_name":"Gideon Belli",
-        "email":"gbellih@yellowpages.com",
-        "password":"kGZwQKplsIt",
-        "dni":"7600558696",
-        "date_of_birth":"10/10/1924"
-    },
-    {
-        "id":19,
-        "full_name":"Franklyn Brookbank",
-        "email":"fbrookbanki@webeden.co.uk",
-        "password":"UC4QPZVH1QHg",
-        "dni":"9354471242",
-        "date_of_birth":"13/01/1975"
-    },
-    {
-        "id":20,
-        "full_name":"Cora Wiltsher",
-        "email":"cwiltsherj@hud.gov",
-        "password":"8Pg5Wr",
-        "dni":"8460475794",
-        "date_of_birth":"18/09/1918"
-    }
+  {
+    "id": 1,
+    "full_name": "Friedrick Wordington",
+    "email": "fwordington0@sbwire.com",
+    "password": "cgyuTq",
+    "dni": "1821580044",
+    "date_of_birth": "23/06/2007"
+  },
+  {
+    "id": 2,
+    "full_name": "Thorpe Perroni",
+    "email": "tperroni1@linkedin.com",
+    "password": "x1JZ5nTU9f",
+    "dni": "6665094774",
+    "date_of_birth": "30/12/2009"
+  },
+  {
+    "id": 3,
+    "full_name": "Raven Gwinn",
+    "email": "rgwinn2@wiley.com",
+    "password": "pSRXn4QiNVjI",
+    "dni": "6248714622",
+    "date_of_birth": "04/12/1998"
+  },
+  {
+    "id": 4,
+    "full_name": "Valerie Chaffen",
+    "email": "vchaffen3@wisc.edu",
+    "password": "Jp4NOY5EFZG",
+    "dni": "1807253074",
+    "date_of_birth": "17/04/1942"
+  },
+  {
+    "id": 5,
+    "full_name": "Clemente Pender",
+    "email": "cpender4@w3.org",
+    "password": "jfYjArUH",
+    "dni": "0208277064",
+    "date_of_birth": "17/11/1994"
+  },
+  {
+    "id": 6,
+    "full_name": "Eleen Pagel",
+    "email": "epagel5@google.pl",
+    "password": "5kLMxd",
+    "dni": "7316697725",
+    "date_of_birth": "14/10/2019"
+  },
+  {
+    "id": 7,
+    "full_name": "Enrica Wilse",
+    "email": "ewilse6@disqus.com",
+    "password": "1ZXbqIx",
+    "dni": "9648200920",
+    "date_of_birth": "12/09/1955"
+  },
+  {
+    "id": 8,
+    "full_name": "Tann Georgeon",
+    "email": "tgeorgeon7@who.int",
+    "password": "KwhxCDAp34B",
+    "dni": "9539335361",
+    "date_of_birth": "19/09/2018"
+  },
+  {
+    "id": 9,
+    "full_name": "Gwenore Hallums",
+    "email": "ghallums8@bing.com",
+    "password": "4MoNrel6OLg",
+    "dni": "5267878588",
+    "date_of_birth": "20/04/2007"
+  },
+  {
+    "id": 10,
+    "full_name": "Coletta Lazonby",
+    "email": "clazonby9@sciencedaily.com",
+    "password": "s9HkRpY0UJ",
+    "dni": "6244099923",
+    "date_of_birth": "20/05/1968"
+  },
+  {
+    "id": 11,
+    "full_name": "Jacob Epple",
+    "email": "jepplea@salon.com",
+    "password": "RrHXl02",
+    "dni": "1194316468",
+    "date_of_birth": "28/09/1909"
+  },
+  {
+    "id": 12,
+    "full_name": "Brennen Macy",
+    "email": "bmacyb@tamu.edu",
+    "password": "CoXWCgo",
+    "dni": "9357909575",
+    "date_of_birth": "21/05/1989"
+  },
+  {
+    "id": 13,
+    "full_name": "Cully Ascraft",
+    "email": "cascraftc@geocities.com",
+    "password": "Q1CHqrnDn9ZZ",
+    "dni": "3770694309",
+    "date_of_birth": "21/12/1985"
+  },
+  {
+    "id": 14,
+    "full_name": "Cecilio Wann",
+    "email": "cwannd@wisc.edu",
+    "password": "O2dT4gOVF4",
+    "dni": "5573198300",
+    "date_of_birth": "20/02/1998"
+  },
+  {
+    "id": 15,
+    "full_name": "Jerrie Pinxton",
+    "email": "jpinxtone@blogspot.com",
+    "password": "vMIQkzW",
+    "dni": "3025665602",
+    "date_of_birth": "27/01/2011"
+  },
+  {
+    "id": 16,
+    "full_name": "Cordelie McGregor",
+    "email": "cmcgregorf@gizmodo.com",
+    "password": "4CuBk3Dq",
+    "dni": "3049101571",
+    "date_of_birth": "16/07/1966"
+  },
+  {
+    "id": 17,
+    "full_name": "Gradeigh Skudder",
+    "email": "gskudderg@fastcompany.com",
+    "password": "Zg4WEQMR5uLZ",
+    "dni": "8113164553",
+    "date_of_birth": "25/07/1903"
+  },
+  {
+    "id": 18,
+    "full_name": "Gideon Belli",
+    "email": "gbellih@yellowpages.com",
+    "password": "kGZwQKplsIt",
+    "dni": "7600558696",
+    "date_of_birth": "10/10/1924"
+  },
+  {
+    "id": 19,
+    "full_name": "Franklyn Brookbank",
+    "email": "fbrookbanki@webeden.co.uk",
+    "password": "UC4QPZVH1QHg",
+    "dni": "9354471242",
+    "date_of_birth": "13/01/1975"
+  },
+  {
+    "id": 20,
+    "full_name": "Cora Wiltsher",
+    "email": "cwiltsherj@hud.gov",
+    "password": "8Pg5Wr",
+    "dni": "8460475794",
+    "date_of_birth": "18/09/1918"
+  },
+  {
+    "id": 21,
+    "dni": null
+  },
+  {
+    "id": 22,
+    "dni": null
+  },
+  {
+    "id": 23,
+    "full_name": "sanchez",
+    "email": "mi@correo.com",
+    "password": "123456",
+    "dni": 1234125125,
+    "date_of_birth": "2022-02-17"
+  }
 ]

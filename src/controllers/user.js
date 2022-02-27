@@ -35,7 +35,7 @@ const controller = {
 
 		const nuevo = generate(req.body);
 		create(nuevo);
-		return res.redirect('/productos/' + nuevo.id);
+		return res.redirect('/users/' + nuevo.id);
 	},
 	update: (req, res) => {
 		const { id } = req.params;
