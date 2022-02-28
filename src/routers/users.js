@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 const { body } = require('express-validator');
-const { show, index, create, storage } = require('../controllers/user');
+const { show, index, create, userStorage } = require('../controllers/user');
 
 // Validaciones
 const validateForm = [
@@ -16,6 +16,6 @@ router.get('/list', index);
 
 router.get('/register', create);
 
-router.post('/register', validateForm, storage), router.get('/:id', show);
+router.post('/register', validateForm, userStorage), router.get('/:id', show);
 
 module.exports = router;

@@ -1,6 +1,4 @@
-const path = require('path');
-const views = path.join(__dirname, '../views');
-
+const { validationResult } = require('express-validator');
 const { match, list, generate, create, update, trash, filter } = require('../models/user');
 
 const controller = {
@@ -28,9 +26,14 @@ const controller = {
 			  });
 	},
 	create: (req, res) => res.render('register', { title: 'Register' }),
-	storage: (req, res) => {
-		// return res.send(req.files);
-
+	userStorage: (req, res) => {
+		let errores = validationResult(req);
+		if (!errores.isEmpty()) {
+			return res.render('register', {
+				errores: errores.array(),
+				old: req.body,
+			});
+		}
 		req.body.files = req.files;
 
 		const nuevo = generate(req.body);

@@ -8,6 +8,11 @@
 		<%- include('./partials/header') %>
 		<main>
 			<!-- <section> -->
+				<% if (locals.errores) {
+					errores.forEach(error => { %>
+						<p><%= error.msg %></p>
+				<% })
+			} %>
 				<form class="formulario" method="POST" action="/users/register">
 					<legend>Formulario de Registro</legend>
 					 <section class="contenedor-campos">
@@ -20,6 +25,7 @@
 									type="text"
 									id="nombre"
 									placeholder="Nombre Completo"
+									value="<%= locals.old && old.full_name ? old.full_name : '' %>"
 								/>
 							</fieldset>
 							<fieldset class="campo">
@@ -30,6 +36,7 @@
 									type="number"
 									id="dni"
 									placeholder="DNI"
+									value="<%= locals.old && old.dni ? old.dni : '' %>"
 								/>
 							</fieldset>
 							<fieldset class="campo">
@@ -40,6 +47,7 @@
 									type="email"
 									id="email"
 									placeholder="Email"
+									value="<%= locals.old && old.email ? old.email : '' %>"
 								/>
 							</fieldset>
 							<fieldset class="campo">
@@ -50,11 +58,12 @@
 									type="password"
 									id="pass1"
 									placeholder="Contraseña"
+									
 								/>
 							</fieldset>
 							<fieldset class="campo">
 								<label for="birth">Fecha de Nacimiento</label>
-								<input name="date_of_birth" class="input-text" id="birth" type="date" />
+								<input name="date_of_birth" class="input-text" id="birth" type="date" value="<%= locals.old && old.date_of_birth ? old.date_of_birth : '' %>" />
 							</fieldset>
 							<fieldset class="campo">
 								<label for="pass2">Confirmar Contraseña</label>

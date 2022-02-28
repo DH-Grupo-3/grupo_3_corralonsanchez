@@ -182,5 +182,29 @@
     "password": "",
     "dni": 4124,
     "date_of_birth": ""
+  },
+  {
+    "id": 25,
+    "full_name": "",
+    "email": "asdfq@gmail.com",
+    "password": "",
+    "dni": 654321,
+    "date_of_birth": ""
+  },
+  {
+    "id": 26,
+    "full_name": "",
+    "email": "",
+    "password": "",
+    "dni": 0,
+    "date_of_birth": ""
+  },
+  {
+    "id": 27,
+    "full_name": "",
+    "email": "",
+    "password": "",
+    "dni": 0,
+    "date_of_birth": ""
   }
 ]
