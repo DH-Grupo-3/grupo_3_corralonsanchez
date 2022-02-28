@@ -58,7 +58,7 @@
 									type="password"
 									id="pass1"
 									placeholder="Contraseña"
-									
+									value="<%= locals.old && old.password ? old.password : '' %>"
 								/>
 							</fieldset>
 							<fieldset class="campo">
@@ -73,6 +73,7 @@
 									type="password"
 									id="pass2"
 									placeholder="Confirmar Contraseña"
+									value="<%= locals.old && old.password2 ? old.password2 : '' %>"
 								/>
 							</fieldset>
 					    </section>

@@ -10,6 +10,12 @@ const validateForm = [
 	body('password').notEmpty().withMessage('Debes introducir una contraseña válida'),
 	body('dni').notEmpty().withMessage('Debes introducir DNI'),
 	body('date_of_birth').notEmpty().withMessage('Debes introducir fecha de nacimiento'),
+	body('password2').custom((value, { req }) => {
+		if (value !== req.body.password) {
+			throw new Error('Las contraseñas no coinciden');
+		  }
+		  return true;
+		}),
 ];
 
 router.get('/list', index);
