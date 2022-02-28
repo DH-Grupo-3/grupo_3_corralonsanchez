@@ -30,7 +30,7 @@ const controller = {
 		let errores = validationResult(req);
 		if (!errores.isEmpty()) {
 			return res.render('register', {
-				errores: errores.array(),
+				errores: errores.mapped(),
 				old: req.body,
 			});
 		}

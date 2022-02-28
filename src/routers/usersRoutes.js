@@ -1,13 +1,14 @@
 const { Router } = require('express');
 const router = Router();
 const { body } = require('express-validator');
-const { show, index, create, userStorage } = require('../controllers/user');
+const { show, index, create, userStorage } = require('../controllers/userController');
 
 // Validaciones
 const validateForm = [
-	body('full_name').notEmpty().withMessage('Debes introducir tú nombre completo'),
-	body('email').notEmpty().isEmail().withMessage('Debes introducir un email válido'),
+	body('full_name').notEmpty().withMessage('Debes introducir un nombre'),
+	body('email').notEmpty().withMessage('Debes introducir un email válido'),
 	body('password').notEmpty().withMessage('Debes introducir una contraseña válida'),
+	body('password2').notEmpty().withMessage('Debes introducir una contraseña válida'),
 	body('dni').notEmpty().withMessage('Debes introducir DNI'),
 	body('date_of_birth').notEmpty().withMessage('Debes introducir fecha de nacimiento'),
 ];
