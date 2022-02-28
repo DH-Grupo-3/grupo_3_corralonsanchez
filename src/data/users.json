@@ -206,5 +206,13 @@
     "password": "",
     "dni": 0,
     "date_of_birth": ""
+  },
+  {
+    "id": 28,
+    "full_name": "ivan",
+    "email": "mi@email.com",
+    "password": "12345",
+    "dni": 321654,
+    "date_of_birth": "2022-02-17"
   }
 ]
