@@ -246,5 +246,13 @@
     "password": "",
     "dni": 0,
     "date_of_birth": ""
+  },
+  {
+    "id": 33,
+    "full_name": "sdfsdf",
+    "email": "mi@cdorreo.com",
+    "password": "12345",
+    "dni": 52456345,
+    "date_of_birth": "2022-02-25"
   }
 ]
