@@ -6,7 +6,12 @@ const { show, index, create, userStorage } = require('../controllers/userControl
 // Validaciones
 const validateForm = [
 	body('full_name').notEmpty().withMessage('Debes introducir un nombre'),
-	body('email').notEmpty().withMessage('Debes introducir un email válido'),
+	body('email')
+		.notEmpty()
+		.withMessage('Debes introducir un email')
+		.bail()
+		.isEmail()
+		.withMessage('Debes escribir un formato de correo válido'),
 	body('password').notEmpty().withMessage('Debes introducir una contraseña válida'),
 	body('password2').notEmpty().withMessage('Debes introducir una contraseña válida'),
 	body('dni').notEmpty().withMessage('Debes introducir DNI'),
@@ -14,9 +19,9 @@ const validateForm = [
 	body('password2').custom((value, { req }) => {
 		if (value !== req.body.password) {
 			throw new Error('Las contraseñas no coinciden');
-		  }
-		  return true;
-		}),
+		}
+		return true;
+	}),
 ];
 
 router.get('/list', index);
