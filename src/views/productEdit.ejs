@@ -46,21 +46,11 @@
 				</fieldset>
 				<fieldset>
 					<label for="price">Precio:</label>
-					<input
-						type="number"
-						id="price"
-						name="product_price"
-						value="<%= product.price %>"
-					/>
+					<input type="number" id="price" name="product_price" value="<%= product.price %>" />
 				</fieldset>
 				<fieldset>
 					<label for="stock">Stock:</label>
-					<input
-						type="number"
-						id="stock"
-						name="product_stock"
-						value="<%= product.stock %>"
-					/>
+					<input type="number" id="stock" name="product_stock" value="<%= product.stock %>" />
 				</fieldset>
 				<fieldset>
 					<label>¿Esta en oferta?</label><% if (product.ofer) { %>
