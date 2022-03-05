@@ -214,5 +214,21 @@
     "password": "12345",
     "dni": 321654,
     "date_of_birth": "2022-02-17"
+  },
+  {
+    "id": 29,
+    "full_name": "",
+    "email": "",
+    "password": "",
+    "dni": 0,
+    "date_of_birth": ""
+  },
+  {
+    "id": 30,
+    "full_name": "",
+    "email": "",
+    "password": "",
+    "dni": 0,
+    "date_of_birth": ""
   }
 ]

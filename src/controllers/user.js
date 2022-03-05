@@ -28,9 +28,10 @@ const controller = {
 	create: (req, res) => res.render('register', { title: 'Register' }),
 	userStorage: (req, res) => {
 		let errores = validationResult(req);
-		if (!errores.isEmpty()) {
+		if (!errores.isEmpty() && req.body.password !== req.body.password2) {
 			return res.render('register', {
 				errores: errores.array(),
+
 				old: req.body,
 			});
 		}
