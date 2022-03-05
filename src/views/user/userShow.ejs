@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html lang="es">
 	<head>
 		<%- include('../partials/head') %>
@@ -25,4 +26,33 @@
 
 		
 		
+=======
+<html lang="es">
+	<head>
+		<%- include('../partials/head') %>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<link rel="stylesheet" href="css/productos.css" />
+	</head>
+
+	<body>
+		<!-- header -->
+		<%- include('../partials/header') %>
+
+        <form action="/users/" method="get">
+            <input type="text" name="search" id="search" placeholder="Buscar Usuario">
+            <button type="submit">Buscar</button>
+        </form>
+
+		<h2>Nombre Completo: <%= user.full_name %> </h2>
+		<h2>Email: <%= user.email %> </h2>
+		<h2>DNI: <%= user.dni %> </h2>
+		<h2>Fecha de Nacimiento: <%= user.date_of_birth %> </h2>
+		
+	</body>
+</html>
+
+		
+		
+>>>>>>> d046bad3eef146666c38a1d0ef34392acd5156fb
 		

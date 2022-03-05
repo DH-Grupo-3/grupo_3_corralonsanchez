@@ -24,6 +24,6 @@ app.use(session({ secret: 'Secreto' }));
 
 app.use('/', router);
 app.use('/products', productRouter);
-app.use('/users', require('./routers/users'));
+app.use('/users', require('./routers/usersRoutes'));
 
 module.exports = app;

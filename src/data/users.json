@@ -230,5 +230,32 @@
     "password": "",
     "dni": 0,
     "date_of_birth": ""
+<<<<<<< HEAD
+=======
+  },
+  {
+    "id": 31,
+    "full_name": "",
+    "email": "",
+    "password": "",
+    "dni": 0,
+    "date_of_birth": ""
+  },
+  {
+    "id": 32,
+    "full_name": "",
+    "email": "",
+    "password": "",
+    "dni": 0,
+    "date_of_birth": ""
+  },
+  {
+    "id": 33,
+    "full_name": "sdfsdf",
+    "email": "mi@cdorreo.com",
+    "password": "12345",
+    "dni": 52456345,
+    "date_of_birth": "2022-02-25"
+>>>>>>> d046bad3eef146666c38a1d0ef34392acd5156fb
   }
 ]
