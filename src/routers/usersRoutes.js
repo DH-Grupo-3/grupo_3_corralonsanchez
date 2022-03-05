@@ -25,6 +25,8 @@ router.get('/register', create);
 
 router.get('/login', login);
 
+router.post('/login', [], login);
+
 router.post('/register', validateForm, userStorage), router.get('/:id', show);
 
 module.exports = router;
