@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const router = require('./routers/router');
 const productRouter = require('./routers/product');
+const usersRouter = require('./routers/user');
 const path = require('path');
 const method = require('method-override');
 const session = require('express-session');
@@ -24,6 +25,6 @@ app.use(session({ secret: 'Secreto' }));
 
 app.use('/', router);
 app.use('/products', productRouter);
-app.use('/users', require('./routers/usersRoutes'));
+app.use('/users', usersRouter);
 
 module.exports = app;

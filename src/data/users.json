@@ -230,8 +230,6 @@
     "password": "",
     "dni": 0,
     "date_of_birth": ""
-<<<<<<< HEAD
-=======
   },
   {
     "id": 31,
@@ -256,6 +254,13 @@
     "password": "12345",
     "dni": 52456345,
     "date_of_birth": "2022-02-25"
->>>>>>> d046bad3eef146666c38a1d0ef34392acd5156fb
+  },
+  {
+    "id": 34,
+    "full_name": "tongas",
+    "email": "tongas@tongas.com",
+    "password": "$2b$10$XqOhFXfcyt1va6dbMiCfUuiw/3xCTk0GwbeQDJlCpXHnHzRa2yUBO",
+    "dni": 10101001,
+    "date_of_birth": "1998-01-10"
   }
 ]

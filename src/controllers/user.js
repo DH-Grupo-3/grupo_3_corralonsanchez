@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
 const { match, list, generate, create, update, trash, filter } = require('../models/user');
+const bcrypt = require('bcrypt');
 
 const controller = {
 	index: (req, res) => {
@@ -28,15 +29,17 @@ const controller = {
 	create: (req, res) => res.render('register', { title: 'Register' }),
 	userStorage: (req, res) => {
 		let errores = validationResult(req);
-		if (!errores.isEmpty() && req.body.password !== req.body.password2) {
+		if (!errores.isEmpty()) {
 			return res.render('register', {
-				errores: errores.array(),
+				errores: errores.mapped(),
 
 				old: req.body,
 			});
 		}
-		req.body.files = req.files;
 
+		const saltos = 10;
+		req.body.files = req.files;
+		req.body.password = bcrypt.hashSync(req.body.password, saltos);
 		const nuevo = generate(req.body);
 		create(nuevo);
 		return res.redirect('/users/' + nuevo.id);

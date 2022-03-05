@@ -1,14 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 const { body } = require('express-validator');
-const {
-	show,
-	index,
-	create,
-	userStorage,
-	login,
-	processLogin,
-} = require('../controllers/userController');
+const { show, index, create, userStorage, login, processLogin } = require('../controllers/user');
 
 // Validaciones
 const validateForm = [
@@ -17,6 +10,12 @@ const validateForm = [
 	body('password').notEmpty().withMessage('Debes introducir una contraseña válida'),
 	body('dni').notEmpty().withMessage('Debes introducir DNI'),
 	body('date_of_birth').notEmpty().withMessage('Debes introducir fecha de nacimiento'),
+	body('password2').custom((value, { req }) => {
+		if (value !== req.body.password) {
+			throw new Error('Las contraseñas no coinciden');
+		}
+		return true;
+	}),
 ];
 
 router.get('/list', index);
@@ -27,6 +26,8 @@ router.get('/login', login);
 
 router.post('/login', [], login);
 
-router.post('/register', validateForm, userStorage), router.get('/:id', show);
+router.post('/register', validateForm, userStorage);
+
+router.get('/:id', show);
 
 module.exports = router;
