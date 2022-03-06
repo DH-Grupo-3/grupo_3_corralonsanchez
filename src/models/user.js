@@ -30,8 +30,10 @@ const model = {
 		}),
 	create: (data) => {
 		let lista = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+		let newUser = data;
 		lista.push(data);
 		model.write(lista);
+		return newUser;
 	},
 	update: (data) => {
 		let usuarios = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));

@@ -1,7 +1,14 @@
 const { Router } = require('express');
 const router = Router();
 const { body } = require('express-validator');
-const { show, index, create, userStorage, login, processLogin } = require('../controllers/user');
+const {
+	show,
+	index,
+	register,
+	processRegister,
+	login,
+	loginProcess,
+} = require('../controllers/user');
 
 // Validaciones
 const validateForm = [
@@ -20,13 +27,13 @@ const validateForm = [
 
 router.get('/list', index);
 
-router.get('/register', create);
+router.get('/register', register);
 
 router.get('/login', login);
 
-router.post('/login', [], login);
+router.post('/login', loginProcess);
 
-router.post('/register', validateForm, userStorage);
+router.post('/register', validateForm, processRegister);
 
 router.get('/:id', show);
 

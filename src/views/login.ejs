@@ -1,7 +1,7 @@
 <html lang="en">
 	<head>
 		<%- include('./partials/head') %>
-		<link rel="stylesheet" href="css/login.css" />
+		<link rel="stylesheet" href="/css/login.css" />
 	</head>
 
 	<body class="body_login">
@@ -20,6 +20,7 @@
 									class="input-text"
 									type="email"
 									id="email"
+									name="email"
 									placeholder="Email"
 								/>
 							</fieldset>
@@ -29,20 +30,26 @@
 								<input
 									class="input-text"
 									type="password"
+									name="password"
 									id="pass"
 									placeholder="Contraseña"
 								/>
 
 							</fieldset>
+							<fieldset class="col-md-6 my-2">
+								<input type="checkbox" name="remember_user" id="form-check-label">
+								<label for="form-check-label">Recordar mi usuario</label>
+							</fieldset>
+
 							<nav class="recuperar_pass">								
 								<a href="#"><small class="letra_primario">¿Olvidaste tu contraseña?</small></a>
 													
-								<a href="#"><small class="letra_primario">No tiene una cuenta? Registrarse></small></a>
+								<a href="/register"><small class="letra_primario">No tiene una cuenta? Registrarse></small></a>
 							</nav>
 						
 						<!-- .contenedor-campos -->
 						<!-- <div class="alinear-derecha flex"> -->
-							<button class="boton w-sm-100 alinear-centro flex" type="button" value="Iniciar Sesión">Iniciar Sesión</button>
+							<input class="boton w-sm-100 alinear-centro flex" type="submit" value="Iniciar Sesión">
 						<!-- </div> -->
 
 					<!-- </fieldset> -->
