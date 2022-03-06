@@ -6,7 +6,8 @@ const { show, index, create, userStorage, login, processLogin } = require('../co
 // Validaciones
 const validateForm = [
 	body('full_name').notEmpty().withMessage('Debes introducir tú nombre completo'),
-	body('email').notEmpty().isEmail().withMessage('Debes introducir un email válido'),
+	body('email').notEmpty().withMessage('Debes introducir un email válido').bail()
+				 .isEmail().withMessage('Debes introducir un email válido'),
 	body('password').notEmpty().withMessage('Debes introducir una contraseña válida'),
 	body('dni').notEmpty().withMessage('Debes introducir DNI'),
 	body('date_of_birth').notEmpty().withMessage('Debes introducir fecha de nacimiento'),

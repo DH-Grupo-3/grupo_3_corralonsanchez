@@ -5,11 +5,11 @@ const bcrypt = require('bcrypt');
 const controller = {
 	index: (req, res) => {
 		const { search } = req.query;
-
+		
 		return search
 			? res.render('user/userList', {
 					title: 'Search |' + search,
-					productos: filter('name', search),
+					users: filter("full_name", search)
 			  })
 			: res.render('user/userlist', { title: 'Users List', users: list() });
 	},

@@ -9,8 +9,8 @@ const model = {
 	filter: (propiedad, valor) =>
 		model
 			.list()
-			.filter((producto) =>
-				typeof valor !== 'string' ? user[propiedad] == valor : user[propiedad].includes(valor),
+			.filter((user) =>
+				typeof valor !== 'string' ? user[propiedad] == valor : user[propiedad].includes(valor)
 			),
 	match: (propiedad, valor) => model.list().find((user) => user[propiedad] == valor),
 	generate: (data) =>
