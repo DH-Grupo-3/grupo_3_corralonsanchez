@@ -161,106 +161,18 @@
   },
   {
     "id": 21,
-    "dni": null
+    "full_name": "asdfsdf",
+    "email": "mi@correo.com",
+    "password": "$2b$10$H38cClw9txCEMP/anxHVdedHusqFkN7lteBGp3ov7.ZL463NbAIFi",
+    "dni": 14321251,
+    "date_of_birth": "2022-03-16"
   },
   {
     "id": 22,
-    "dni": null
-  },
-  {
-    "id": 23,
-    "full_name": "sanchez",
-    "email": "mi@correo.com",
-    "password": "123456",
-    "dni": 1234125125,
-    "date_of_birth": "2022-02-17"
-  },
-  {
-    "id": 24,
-    "full_name": "",
-    "email": "ivan@gmail.com",
-    "password": "",
-    "dni": 4124,
-    "date_of_birth": ""
-  },
-  {
-    "id": 25,
-    "full_name": "",
-    "email": "asdfq@gmail.com",
-    "password": "",
-    "dni": 654321,
-    "date_of_birth": ""
-  },
-  {
-    "id": 26,
-    "full_name": "",
-    "email": "",
-    "password": "",
-    "dni": 0,
-    "date_of_birth": ""
-  },
-  {
-    "id": 27,
-    "full_name": "",
-    "email": "",
-    "password": "",
-    "dni": 0,
-    "date_of_birth": ""
-  },
-  {
-    "id": 28,
-    "full_name": "ivan",
-    "email": "mi@email.com",
-    "password": "12345",
-    "dni": 321654,
-    "date_of_birth": "2022-02-17"
-  },
-  {
-    "id": 29,
-    "full_name": "",
-    "email": "",
-    "password": "",
-    "dni": 0,
-    "date_of_birth": ""
-  },
-  {
-    "id": 30,
-    "full_name": "",
-    "email": "",
-    "password": "",
-    "dni": 0,
-    "date_of_birth": ""
-  },
-  {
-    "id": 31,
-    "full_name": "",
-    "email": "",
-    "password": "",
-    "dni": 0,
-    "date_of_birth": ""
-  },
-  {
-    "id": 32,
-    "full_name": "",
-    "email": "",
-    "password": "",
-    "dni": 0,
-    "date_of_birth": ""
-  },
-  {
-    "id": 33,
-    "full_name": "sdfsdf",
-    "email": "mi@cdorreo.com",
-    "password": "12345",
-    "dni": 52456345,
-    "date_of_birth": "2022-02-25"
-  },
-  {
-    "id": 34,
-    "full_name": "tongas",
-    "email": "tongas@tongas.com",
-    "password": "$2b$10$XqOhFXfcyt1va6dbMiCfUuiw/3xCTk0GwbeQDJlCpXHnHzRa2yUBO",
-    "dni": 10101001,
-    "date_of_birth": "1998-01-10"
+    "full_name": "asdfsdg",
+    "email": "mi2@correo.com",
+    "password": "$2b$10$dSx0pHKcw9bg0Ce2fJtUHOYPqCxQj4I2zJ0vBWlxipLjpfqjkjVIu",
+    "dni": 235234234,
+    "date_of_birth": "2022-03-17"
   }
 ]

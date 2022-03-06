@@ -26,12 +26,27 @@ const controller = {
 					error: 'No se encontró ningún usuario',
 			  });
 	},
-	create: (req, res) => res.render('register', { title: 'Register' }),
-	userStorage: (req, res) => {
+	register: (req, res) => res.render('register', { title: 'Register' }),
+
+	processRegister: (req, res) => {
 		let errores = validationResult(req);
 		if (!errores.isEmpty()) {
 			return res.render('register', {
 				errores: errores.mapped(),
+
+				old: req.body,
+			});
+		}
+
+		const userInDb = match('email', req.body.email);
+
+		if (userInDb) {
+			return res.render('register', {
+				errores: {
+					email: {
+						msg: 'Este email ya está registrado',
+					},
+				},
 
 				old: req.body,
 			});
@@ -42,7 +57,7 @@ const controller = {
 		req.body.password = bcrypt.hashSync(req.body.password, saltos);
 		const nuevo = generate(req.body);
 		create(nuevo);
-		return res.redirect('/users/' + nuevo.id);
+		return res.redirect('/users/login');
 	},
 	update: (req, res) => {
 		const { id } = req.params;
@@ -68,6 +83,19 @@ const controller = {
 	},
 	login: (req, res) => {
 		return res.render('login');
+	},
+	loginProcess: (req, res) => {
+		let userToLogin = match('email', req.body.email);
+		if (userToLogin) {
+		}
+
+		return res.render('login', {
+			errores: {
+				email: {
+					msg: 'Este email no está registrado',
+				},
+			},
+		});
 	},
 };
 module.exports = controller;
