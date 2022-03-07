@@ -9,6 +9,7 @@ const {
 	login,
 	loginProcess,
 } = require('../controllers/user');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 // Validaciones
 const validateForm = [
@@ -28,9 +29,9 @@ const validateForm = [
 
 router.get('/list', index);
 
-router.get('/register', register);
+router.get('/register', guestMiddleware, register);
 
-router.get('/login', login);
+router.get('/login', guestMiddleware, login);
 
 router.post('/login', loginProcess);
 
