@@ -87,12 +87,19 @@ const controller = {
 	loginProcess: (req, res) => {
 		let userToLogin = match('email', req.body.email);
 		if (userToLogin) {
+			let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password)
+			if (passwordOk) {
+				req.session.userLogged = userToLogin;
+				// console.log(req.session.userLogged);
+				return res.redirect("/");  //redirecciono a la pagina principal
+				
+			}
 		}
 
 		return res.render('login', {
 			errores: {
 				email: {
-					msg: 'Este email no está registrado',
+					msg: 'Credenciales inválidas',
 				},
 			},
 		});

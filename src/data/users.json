@@ -174,5 +174,13 @@
     "password": "$2b$10$dSx0pHKcw9bg0Ce2fJtUHOYPqCxQj4I2zJ0vBWlxipLjpfqjkjVIu",
     "dni": 235234234,
     "date_of_birth": "2022-03-17"
+  },
+  {
+    "id": 23,
+    "full_name": "Juli",
+    "email": "juli@hotmail.com",
+    "password": "$2b$10$3AaWbaG3nKCLEJbvlmGmnunFmMgZdPMKGx89a0kuN4p89cbpeom.y",
+    "dni": 11111111,
+    "date_of_birth": "1990-09-24"
   }
 ]

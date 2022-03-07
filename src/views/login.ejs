@@ -23,6 +23,9 @@
 									name="email"
 									placeholder="Email"
 								/>
+								<% if (locals.errores && errores.email) { %>
+									<div class="text-danger"><%= errores.email.msg %></div>
+								<% } %>
 							</fieldset>
 							
 							<fieldset class="campo">
