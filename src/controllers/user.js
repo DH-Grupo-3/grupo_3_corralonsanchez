@@ -115,5 +115,9 @@ const controller = {
 			user: req.session.userLogged,
 		});
 	},
+	logout: (req, res) => {
+        req.session.destroy();   //borrar todo lo que esta en session
+        return res.redirect("/");
+    }
 };
 module.exports = controller;

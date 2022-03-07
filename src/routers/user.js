@@ -9,8 +9,10 @@ const {
 	login,
 	loginProcess,
 	profile,
+	logout,
 } = require('../controllers/user');
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 // Validaciones
 const validateForm = [
@@ -36,9 +38,11 @@ router.get('/login', guestMiddleware, login);
 
 router.post('/login', loginProcess);
 
-router.get('/profile', profile);
+router.get('/profile', authMiddleware, profile);
 
 router.post('/register', validateForm, processRegister);
+
+router.get("/logout", logout);
 
 router.get('/:id', show);
 

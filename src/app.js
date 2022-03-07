@@ -8,6 +8,7 @@ const usersRouter = require('./routers/user');
 const path = require('path');
 const method = require('method-override');
 const session = require('express-session');
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
@@ -22,6 +23,7 @@ app.use(express.static(path.resolve(__dirname, '../uploads')));
 app.use(express.urlencoded({ extended: true }));
 app.use(method('m'));
 app.use(session({ secret: 'Secreto', resave: false, saveUninitialized: false }));
+app.use(userLoggedMiddleware);
 
 app.use('/', router);
 app.use('/products', productRouter);
