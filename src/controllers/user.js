@@ -5,11 +5,11 @@ const bcrypt = require('bcrypt');
 const controller = {
 	index: (req, res) => {
 		const { search } = req.query;
-		
+
 		return search
 			? res.render('user/userList', {
 					title: 'Search |' + search,
-					users: filter("full_name", search)
+					users: filter('full_name', search),
 			  })
 			: res.render('user/userlist', { title: 'Users List', users: list() });
 	},
@@ -27,6 +27,7 @@ const controller = {
 			  });
 	},
 	register: (req, res) => res.render('register', { title: 'Register' }),
+	// .cookie('testing','mensaje',{masAge:1000*30),
 
 	processRegister: (req, res) => {
 		let errores = validationResult(req);
@@ -91,6 +92,11 @@ const controller = {
 			if (passwordOk) {
 				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
+
+				if (req.body.remember_user) {
+					res.cookie('userEmail', req.body.email, { maxAge: 1000 * 60 * 2 });
+				}
+
 				return res.redirect('/users/profile');
 			}
 			return res.render('login', {
@@ -111,13 +117,17 @@ const controller = {
 		});
 	},
 	profile: (req, res) => {
+		console.log(req.cookies.userEmail);
 		return res.render('user/profile', {
 			user: req.session.userLogged,
 		});
 	},
+
 	logout: (req, res) => {
-        req.session.destroy();   //borrar todo lo que esta en session
-        return res.redirect("/");
-    }
+		res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	},
 };
+
 module.exports = controller;

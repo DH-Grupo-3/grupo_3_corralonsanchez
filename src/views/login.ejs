@@ -5,55 +5,63 @@
 	</head>
 
 	<body class="body_login">
-
 		<!-- header -->
 		<%- include('./partials/header') %>
 		<main>
 			<section>
-				<form class="formulario_login" action="/users/login" method="POST" >
+				<form class="formulario_login" action="/users/login" method="POST">
 					<!-- <fieldset> -->
-						<legend>Login</legend>
-						<!-- <div class="contenedor-campos-login"> -->
-							<fieldset class="campo">
-								<label for="email">Correo</label>
-								<input
-									class="input-text"
-									type="email"
-									id="email"
-									name="email"
-									placeholder="Email"
-								/>
-								<% if (locals.errores && errores.email) { %>
-									<div class="text-danger"><%= errores.email.msg %></div>
-								<% } %>
-							</fieldset>
-							
-							<fieldset class="campo">
-								<label for="pass">Contraseña</label>
-								<input
-									class="input-text"
-									type="password"
-									name="password"
-									id="pass"
-									placeholder="Contraseña"
-								/>
+					<legend>Login</legend>
+					<!-- <div class="contenedor-campos-login"> -->
+					<fieldset class="campo">
+						<label for="email">Correo</label>
+						<input
+							class="input-text"
+							type="email"
+							id="email"
+							name="email"
+							placeholder="Email"
+						/>
+						<% if (locals.errores && errores.email) { %>
+						<div class="text-danger"><%= errores.email.msg %></div>
+						<% } %>
+					</fieldset>
 
-							</fieldset>
-							<fieldset class="col-md-6 my-2">
-								<input type="checkbox" name="remember_user" id="form-check-label">
-								<label for="form-check-label">Recordar mi usuario</label>
-							</fieldset>
+					<fieldset class="campo">
+						<label for="pass">Contraseña</label>
+						<input
+							class="input-text"
+							type="password"
+							name="password"
+							id="pass"
+							placeholder="Contraseña"
+						/>
+					</fieldset>
+					<fieldset class="col-md-6 my-2">
+						<input type="checkbox" name="remember_user" id="form-check-label" />
+						<label for="form-check-label">Recordar mi usuario</label>
+					</fieldset>
 
-							<nav class="recuperar_pass">								
-								<a href="#"><small class="letra_primario">¿Olvidaste tu contraseña?</small></a>
-													
-								<a href="/register"><small class="letra_primario">No tiene una cuenta? Registrarse></small></a>
-							</nav>
-						
-						<!-- .contenedor-campos -->
-						<!-- <div class="alinear-derecha flex"> -->
-							<input class="boton w-sm-100 alinear-centro flex" type="submit" value="Iniciar Sesión">
-						<!-- </div> -->
+					<nav class="recuperar_pass">
+						<a href="#"
+							><small class="letra_primario">¿Olvidaste tu contraseña?</small></a
+						>
+
+						<a href="/register"
+							><small class="letra_primario"
+								>No tiene una cuenta? Registrarse></small
+							></a
+						>
+					</nav>
+
+					<!-- .contenedor-campos -->
+					<!-- <div class="alinear-derecha flex"> -->
+					<input
+						class="boton w-sm-100 alinear-centro flex"
+						type="submit"
+						value="Iniciar Sesión"
+					/>
+					<!-- </div> -->
 
 					<!-- </fieldset> -->
 				</form>
