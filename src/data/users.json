@@ -182,5 +182,13 @@
     "password": "$2b$10$3AaWbaG3nKCLEJbvlmGmnunFmMgZdPMKGx89a0kuN4p89cbpeom.y",
     "dni": 11111111,
     "date_of_birth": "1990-09-24"
+  },
+  { 
+    "id":24,
+    "full_name": "ivan",
+    "email": "ivan@email.com",
+    "password": "$2b$10$1qGYF9EsXbcKcghrWdnv6.vxjJgMmNPe4/XquUvUBh87msj97f6xe",
+    "dni": 523623626,
+    "date_of_birth": "2022-03-08"
   }
 ]

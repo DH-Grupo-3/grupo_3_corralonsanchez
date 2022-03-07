@@ -8,6 +8,7 @@ const {
 	processRegister,
 	login,
 	loginProcess,
+	profile,
 } = require('../controllers/user');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 
@@ -34,6 +35,8 @@ router.get('/register', guestMiddleware, register);
 router.get('/login', guestMiddleware, login);
 
 router.post('/login', loginProcess);
+
+router.get('/profile', profile);
 
 router.post('/register', validateForm, processRegister);
 

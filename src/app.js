@@ -21,6 +21,8 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 app.use(express.static(path.resolve(__dirname, '../uploads')));
 app.use(express.urlencoded({ extended: true }));
 app.use(method('m'));
+
+
 app.use(session({
     secret: 'Secreto',
     resave: false,
