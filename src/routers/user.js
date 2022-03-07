@@ -8,6 +8,7 @@ const {
 	processRegister,
 	login,
 	loginProcess,
+	profile,
 } = require('../controllers/user');
 
 // Validaciones
@@ -32,6 +33,8 @@ router.get('/register', register);
 router.get('/login', login);
 
 router.post('/login', loginProcess);
+
+router.get('/profile', profile);
 
 router.post('/register', validateForm, processRegister);
 

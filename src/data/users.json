@@ -174,5 +174,13 @@
     "password": "$2b$10$dSx0pHKcw9bg0Ce2fJtUHOYPqCxQj4I2zJ0vBWlxipLjpfqjkjVIu",
     "dni": 235234234,
     "date_of_birth": "2022-03-17"
+  },
+  {
+    "id": 23,
+    "full_name": "ivan",
+    "email": "ivan@email.com",
+    "password": "$2b$10$1qGYF9EsXbcKcghrWdnv6.vxjJgMmNPe4/XquUvUBh87msj97f6xe",
+    "dni": 523623626,
+    "date_of_birth": "2022-03-08"
   }
 ]
