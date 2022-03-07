@@ -87,13 +87,19 @@ const controller = {
 	loginProcess: (req, res) => {
 		let userToLogin = match('email', req.body.email);
 		if (userToLogin) {
-			let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password)
+			let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password);
 			if (passwordOk) {
+				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
-				// console.log(req.session.userLogged);
-				return res.redirect("/");  //redirecciono a la pagina principal
-				
+				return res.redirect('/users/profile');
 			}
+			return res.render('login', {
+				errores: {
+					email: {
+						msg: 'Las credenciales son inválidas',
+					},
+				},
+			});
 		}
 
 		return res.render('login', {
@@ -102,6 +108,11 @@ const controller = {
 					msg: 'Credenciales inválidas',
 				},
 			},
+		});
+	},
+	profile: (req, res) => {
+		return res.render('user/profile', {
+			user: req.session.userLogged,
 		});
 	},
 };

@@ -105,5 +105,10 @@
     color: var(--primario);
 }
 
+.text-danger{
+    margin-top: 5px;
+    margin-left: 3px;
+    color: rgb(163, 7, 7);
+}
 
 

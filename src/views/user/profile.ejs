@@ -10,21 +10,14 @@
 		<!-- header -->
 		<%- include('../partials/header') %>
 
-		<form action="/users/list" method="get">
+		<form action="/users/" method="get">
 			<input type="text" name="search" id="search" placeholder="Buscar Usuario" />
 			<button type="submit">Buscar</button>
 		</form>
 
-		<% if (users.length > 0) { %>
-		<ul>
-			<% users.forEach(user => { %>
-			<li>
-				<a href="/users/<%= user.id  %> "><%= user.full_name %></a>
-			</li>
-			<% }) %>
-		</ul>
-		<% } else { %>
-		<h2>No se encontró ningún usuario</h2>
-		<% } %>
+		<h2>Usuario: <%= user.full_name %></h2>
+		<h2>Email: <%= user.email %></h2>
+		<h2>DNI: <%= user.dni %></h2>
+		<h2>Fecha de Nacimiento: <%= user.date_of_birth %></h2>
 	</body>
 </html>
