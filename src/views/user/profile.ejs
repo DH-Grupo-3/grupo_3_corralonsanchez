@@ -1,0 +1,17 @@
+<html lang="es">
+	<head>
+		<%- include('../partials/head') %>
+		<link rel="stylesheet" href="/css/index.css" />
+		<link rel="stylesheet" href="/css/footer.css" />
+		<link rel="stylesheet" href="/css/productos.css" />
+	</head>
+
+	<body>
+		<!-- header -->
+		<%- include('../partials/header') %>
+		<h2>Usuario: <%= user.full_name %></h2>
+		<h2>Email: <%= user.email %></h2>
+		<h2>DNI: <%= user.dni %></h2>
+		<h2>Fecha de Nacimiento: <%= user.date_of_birth %></h2>
+	</body>
+</html>
