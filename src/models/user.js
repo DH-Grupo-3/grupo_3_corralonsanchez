@@ -28,6 +28,21 @@ const model = {
 			dni: Number(data.dni),
 			date_of_birth: data.date_of_birth,
 		}),
+
+     getData: function(){
+     return JSON.parse(readFileSync(this.file,'utf-8'));
+	 },
+
+	findAll: function (){
+	 return this.getData();
+	 },
+
+	 findByField: function(field,text){
+     let allUsers = this.findAll();
+     let userFound = allUsers.find(oneUser => oneUser[field]===text);
+     return userFound;
+	 },
+
 	create: (data) => {
 		let lista = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 		let newUser = data;

@@ -183,12 +183,20 @@
     "dni": 11111111,
     "date_of_birth": "1990-09-24"
   },
-  { 
-    "id":24,
+  {
+    "id": 24,
     "full_name": "ivan",
     "email": "ivan@email.com",
     "password": "$2b$10$1qGYF9EsXbcKcghrWdnv6.vxjJgMmNPe4/XquUvUBh87msj97f6xe",
     "dni": 523623626,
     "date_of_birth": "2022-03-08"
+  },
+  {
+    "id": 25,
+    "full_name": "azul",
+    "email": "cdscdf@mckfdv.com",
+    "password": "$2b$10$l5.GxXCfZ4CcZ7.UsA3Ov..zQLHCttBCId4h83a9H9.vzi6rOXYiC",
+    "dni": 56165,
+    "date_of_birth": "1999-06-15"
   }
 ]

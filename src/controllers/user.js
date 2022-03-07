@@ -26,9 +26,11 @@ const controller = {
 					error: 'No se encontró ningún usuario',
 			  });
 	},
-	register: (req, res) => res.render('register', { title: 'Register' }),
+	register: (req, res) => 
+	res.render('register', { title: 'Register' }),
+	// .cookie('testing','mensaje',{masAge:1000*30),
 
-	processRegister: (req, res) => {
+     processRegister: (req, res) => {
 		let errores = validationResult(req);
 		if (!errores.isEmpty()) {
 			return res.render('register', {
@@ -91,6 +93,11 @@ const controller = {
 			if (passwordOk) {
 				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
+
+				if(req.body.remember_user){
+					res.cookie('userEmail', req.body.email, {maxAge: (1000 * 60)*2 })
+				}
+
 				return res.redirect('/users/profile');
 			}
 			return res.render('login', {
@@ -111,9 +118,17 @@ const controller = {
 		});
 	},
 	profile: (req, res) => {
+		console.log(req.cookies.userEmail);
 		return res.render('user/profile', {
 			user: req.session.userLogged,
 		});
 	},
+
+	// logout:(req,res) =>{
+	// 	res.clearCookie('userEmail');
+	// 	req.session.destroy();
+	// 	return res.redirect('/');
+	// }
 };
+
 module.exports = controller;

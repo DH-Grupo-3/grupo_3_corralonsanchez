@@ -8,6 +8,7 @@ const usersRouter = require('./routers/user');
 const path = require('path');
 const method = require('method-override');
 const session = require('express-session');
+const cookies = require('cookie-parser');
 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
@@ -28,6 +29,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
+app.use(cookies());
 
 app.use('/', router);
 app.use('/products', productRouter);
