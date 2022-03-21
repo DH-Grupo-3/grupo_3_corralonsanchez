@@ -40,12 +40,6 @@
     width: 100%;
 }
 
-@media (min-width: 768px) {
-    .w-sm-100 {
-        width: auto;
-    }
-}
-
 .body_login {
     background-image: linear-gradient(to top, #a1a1a1 0%, white 100% );
     width: 100%;
@@ -94,11 +88,6 @@
     border: none;
 }
 
-@media (min-width: 768px) {
-    .boton {
-        width: auto;
-    }
-}
 .boton:hover {
     cursor: pointer;
     background-color: var(--gris);
@@ -111,4 +100,25 @@
     color: rgb(163, 7, 7);
 }
 
+.remember label {
+    margin: 0 5px 0 7px;
+    width: auto;
+}
 
+#form-check-label{
+    width: auto;
+    position: relative;
+    top: 1.2px
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
