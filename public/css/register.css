@@ -9,9 +9,11 @@
     box-shadow: 6px 4px 29px 1px rgba(0,0,0,0.52);
 
 }
+
 .formulario fieldset {
     border: none;
 }
+
 .formulario legend{
     text-align: center; 
     font-size: 1.8rem; 
@@ -23,16 +25,6 @@
 
 .alinear-centro {
     justify-content: center;
-}
-
-@media (min-width: 768px) {
-    .contenedor-campos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: auto auto auto;
-    gap: 2rem; 
-
-    }
 }
 
 .campo {
@@ -75,11 +67,7 @@
     text-align: center;
     border: none;
 }
-@media (min-width: 768px) {
-    .boton {
-        width: auto;
-    }
-}
+
 .boton:hover {
     cursor: pointer;
     background-color: var(--gris);
@@ -89,11 +77,6 @@
 
 .w-sm-100 {
     width: 100%;
-}
-@media (min-width: 768px) {
-    .w-sm-100 {
-        width: auto;
-    }
 }
 
 .body_registro {
@@ -109,8 +92,31 @@
 fieldset legend {
     margin: auto;
 }
+
 .text-danger{
     margin-top: 5px;
     margin-left: 3px;
     color: rgb(163, 7, 7);
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto auto auto;
+    gap: 2rem; 
+
+    }
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
 }
