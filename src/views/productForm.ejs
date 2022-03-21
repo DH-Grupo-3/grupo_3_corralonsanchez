@@ -1,6 +1,7 @@
 <html lang="en">
 	<head>
 		<%- include('./partials/head') %>
+		<link rel="stylesheet" href="/css/productform.css" />
 	</head>
 	<body class="body-productform">
 		<!-- header -->
@@ -22,6 +23,10 @@
 					<input type="file" name="product_image" accept=".jpg, .png, .tiff" multiple />
 				</fieldset>
 				<fieldset>
+					<label for="price">Precio:</label>
+					<input type="number" id="price" name="product_price" />
+				</fieldset>
+				<fieldset>
 					<label for="category">Categoria:</label>
 					<select name="category" id="category">
 						<option value="category 1">Categoria 1</option>
@@ -30,10 +35,6 @@
 						<option value="category 4">Categoria 4</option>
 						<option value="category 5">Categoria 5</option>
 					</select>
-				</fieldset>
-				<fieldset>
-					<label for="price">Precio:</label>
-					<input type="number" id="price" name="product_price" />
 				</fieldset>
 				<fieldset>
 					<label for="stock">Stock:</label>
