@@ -32,8 +32,8 @@ app.use(
 	}),
 );
 
-app.use(userLoggedMiddleware);
 app.use(cookies());
+app.use(userLoggedMiddleware);
 
 app.use('/', router);
 app.use('/users', usersRouter);
