@@ -1,10 +1,10 @@
 // Usuario logueado
-const User = require('../models/user')
+const user = require('../models/user');
 
 function guestMiddleware(req, res, next) {
 
     let emailInCookie = req.cookies.userEmail;
-    let userFromCookie = User.findByField('email', emailInCookie);
+    let userFromCookie = user.match('email', emailInCookie);
 
     if (userFromCookie){
     req.session.userLogged = userFromCookie;
