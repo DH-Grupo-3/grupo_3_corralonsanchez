@@ -1,7 +1,6 @@
 <html lang="en">
 	<head>
 		<%- include('./partials/head') %>
-		<link rel="stylesheet" href="/css/register.css" />
 	</head>
 	<body class="body_registro">
 		<!-- header -->
@@ -30,13 +29,41 @@
 						<input
 							name="dni"
 							class="input-text"
-							type="number"
+							type="text"
 							id="dni"
 							placeholder="DNI"
 							value="<%= locals.old && old.dni ? old.dni : '' %>"
 						/>
 						<% if (locals.errores && errores.dni) { %>
 						<div class="text-danger"><%= errores.dni.msg %></div>
+						<% } %>
+					</fieldset>
+					<fieldset class="campo">
+						<label for="cel">Teléfono sin 0, ni prefijo 15</label>
+						<input
+							name="cel"
+							class="input-text"
+							type="tel"
+							id="cel"
+							placeholder="362X-XXXXXX"
+							value="<%= locals.old && old.cel ? old.cel : '' %>"
+						/>
+						<% if (locals.errores && errores.cel) { %>
+						<div class="text-danger"><%= errores.cel.msg %></div>
+						<% } %>
+					</fieldset>
+					<fieldset class="campo">
+						<label for="address">Direccion</label>
+						<input
+							name="address"
+							class="input-text"
+							type="address"
+							id="address"
+							placeholder="Direccion"
+							value="<%= locals.old && old.address ? old.address : '' %>"
+						/>
+						<% if (locals.errores && errores.address) { %>
+						<div class="text-danger"><%= errores.address.msg %></div>
 						<% } %>
 					</fieldset>
 					<fieldset class="campo">

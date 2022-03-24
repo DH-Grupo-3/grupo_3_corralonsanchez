@@ -10,7 +10,7 @@ const model = {
 		model
 			.list()
 			.filter((user) =>
-				typeof valor !== 'string' ? user[propiedad] == valor : user[propiedad].includes(valor)
+				typeof valor !== 'string' ? user[propiedad] == valor : user[propiedad].includes(valor),
 			),
 	match: (propiedad, valor) => model.list().find((user) => user[propiedad] == valor),
 	generate: (data) =>
@@ -24,24 +24,26 @@ const model = {
 					: 1,
 			full_name: data.full_name,
 			email: data.email,
+			address: data.address,
+			cel: data.cel,
 			password: data.password,
 			dni: Number(data.dni),
 			date_of_birth: data.date_of_birth,
 		}),
 
-     getData: function(){
-     return JSON.parse(readFileSync(this.file,'utf-8'));
-	 },
+	getData: function () {
+		return JSON.parse(readFileSync(this.file, 'utf-8'));
+	},
 
-	findAll: function (){
-	 return this.getData();
-	 },
+	findAll: function () {
+		return this.getData();
+	},
 
-	 findByField: function(field,text){
-     let allUsers = this.findAll();
-     let userFound = allUsers.find(oneUser => oneUser[field]===text);
-     return userFound;
-	 },
+	findByField: function (field, text) {
+		let allUsers = this.findAll();
+		let userFound = allUsers.find((oneUser) => oneUser[field] === text);
+		return userFound;
+	},
 
 	create: (data) => {
 		let lista = model.list().sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
@@ -55,6 +57,8 @@ const model = {
 		usuarios = usuarios.map((usuario) => {
 			if (usuario.id == data.id) {
 				usuario.full_name = data.full_name;
+				usuario.address = data.address;
+				usuario.cel = data.cel;
 				usuario.email = data.email;
 				usuario.password = data.password;
 				usuario.dni = data.dni;

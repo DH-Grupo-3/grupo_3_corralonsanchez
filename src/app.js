@@ -32,10 +32,11 @@ app.use(
 	}),
 );
 
-app.use(userLoggedMiddleware);
 app.use(cookies());
+app.use(userLoggedMiddleware);
 
 app.use('/', router);
 app.use('/users', usersRouter);
+app.use('/products', productRouter);
 
 module.exports = app;
