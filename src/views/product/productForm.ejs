@@ -1,0 +1,57 @@
+<html lang="en">
+	<head>
+		<%- include('../partials/head') %>
+		<link rel="stylesheet" href="/css/productform.css" />
+	</head>
+	<body class="body-productform">
+		<!-- header -->
+		<%- include('../partials/header') %>
+		<main>
+			<form
+				action="/products"
+				method="post"
+				class="product-form"
+				enctype="multipart/form-data"
+			>
+				<h3>Carga de productos</h3>
+				<fieldset>
+					<label for="name">Nombre:</label>
+					<input type="text" id="name" name="product_name" />
+				</fieldset>
+				<fieldset>
+					<label for="">Imagen:</label>
+					<input type="file" name="product_image" accept=".jpg, .png, .tiff" multiple />
+				</fieldset>
+				<fieldset>
+					<label for="price">Precio:</label>
+					<input type="number" id="price" name="product_price" />
+				</fieldset>
+				<fieldset>
+					<label for="category">Categoria:</label>
+					<select name="category" id="category">
+						<option value="category 1">Categoria 1</option>
+						<option value="category 2">Categoria 2</option>
+						<option value="category 3">Categoria 3</option>
+						<option value="category 4">Categoria 4</option>
+						<option value="category 5">Categoria 5</option>
+					</select>
+				</fieldset>
+				<fieldset>
+					<label for="stock">Stock:</label>
+					<input type="number" id="stock" name="product_stock" />
+				</fieldset>
+				<fieldset>
+					<label>¿Esta en oferta?</label>
+					<input class="radio" type="radio" name="ofer" value="1" />Si
+					<input class="radio" type="radio" name="ofer" value="0" />No
+				</fieldset>
+				<fieldset>
+					<label for="description">Caracteristicas:</label>
+					<textarea name="product_description" id="description"></textarea>
+				</fieldset>
+
+				<button class="create-product" type="submit">Crear producto</button>
+			</form>
+		</main>
+	</body>
+</html>
