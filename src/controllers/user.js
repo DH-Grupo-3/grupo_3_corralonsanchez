@@ -1,8 +1,19 @@
 const { validationResult } = require('express-validator');
 const { match, list, generate, create, update, trash, filter } = require('../models/user');
 const bcrypt = require('bcrypt');
+let { user } = require('../database/models');
 
 const controller = {
+	crear: async (req, res) => {
+		try {
+			const users = await user.findAll();
+			console.log(users);
+			res.send(users);
+		} catch (error) {
+			res.send(error);
+		}
+	},
+
 	index: (req, res) => {
 		const { search } = req.query;
 
@@ -131,3 +142,4 @@ const controller = {
 };
 
 module.exports = controller;
+

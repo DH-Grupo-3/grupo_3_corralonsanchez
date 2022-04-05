@@ -10,6 +10,7 @@ const {
 	loginProcess,
 	profile,
 	logout,
+	crear,
 } = require('../controllers/user');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
@@ -43,6 +44,8 @@ const validateForm = [
 
 router.get('/list', index);
 
+router.get('/prueba', crear);
+
 router.get('/register', guestMiddleware, register);
 
 router.get('/login', guestMiddleware, login);
@@ -58,3 +61,4 @@ router.get('/logout', logout);
 router.get('/:id', show);
 
 module.exports = router;
+
