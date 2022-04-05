@@ -23,9 +23,15 @@ module.exports = (sequelize, DataTypes) => {
 
 	const config = {
 		tableName: 'buys',
-		timestamp: false,
+		timestamps: false,
 	};
     
 	const buy = sequelize.define(alias, structure, config);
+	buy.associate = function (models) {
+		buy.belongsTo(models.user, {
+			as: 'user',
+			foreignKey: 'idUser',
+		});
+	};
 	return buy;
 };
