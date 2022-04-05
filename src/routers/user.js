@@ -11,6 +11,7 @@ const {
 	profile,
 	logout,
 	crear,
+	save,
 } = require('../controllers/user');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
@@ -43,8 +44,6 @@ const validateForm = [
 ];
 
 router.get('/list', index);
-
-router.get('/prueba', crear);
 
 router.get('/register', guestMiddleware, register);
 

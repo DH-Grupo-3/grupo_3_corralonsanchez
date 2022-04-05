@@ -1,19 +1,8 @@
 const { validationResult } = require('express-validator');
 const { match, list, generate, create, update, trash, filter } = require('../models/user');
 const bcrypt = require('bcrypt');
-let { user } = require('../database/models');
-
+const db = require('../database/models');
 const controller = {
-	crear: async (req, res) => {
-		try {
-			const users = await user.findAll();
-			console.log(users);
-			res.send(users);
-		} catch (error) {
-			res.send(error);
-		}
-	},
-
 	index: (req, res) => {
 		const { search } = req.query;
 
@@ -40,7 +29,7 @@ const controller = {
 	register: (req, res) => res.render('register', { title: 'Register' }),
 	// .cookie('testing','mensaje',{masAge:1000*30),
 
-	processRegister: (req, res) => {
+	processRegister: async (req, res) => {
 		let errores = validationResult(req);
 		if (!errores.isEmpty()) {
 			return res.render('register', {
@@ -49,8 +38,10 @@ const controller = {
 				old: req.body,
 			});
 		}
-
-		const userInDb = match('email', req.body.email);
+		const listaUsuarios = await db.user.findAll();
+		const match = async (propiedad, valor) =>
+			await listaUsuarios.find((user) => user[propiedad] == valor);
+		const userInDb = await match('email', req.body.email);
 
 		if (userInDb) {
 			return res.render('register', {
@@ -59,16 +50,25 @@ const controller = {
 						msg: 'Este email ya está registrado',
 					},
 				},
-
 				old: req.body,
 			});
 		}
-
+		const generate = (data) =>
+			Object({
+				fullName: data.full_name,
+				email: data.email,
+				address: data.address,
+				cel: data.cel,
+				password: data.password,
+				dni: data.dni,
+				dayOfBirth: data.date_of_birth,
+				isAdmin: 0,
+			});
 		const saltos = 10;
 		req.body.files = req.files;
 		req.body.password = bcrypt.hashSync(req.body.password, saltos);
-		const nuevo = generate(req.body);
-		create(nuevo);
+		const newUser = await generate(req.body);
+		db.user.create(newUser);
 		return res.redirect('/users/login');
 	},
 	update: (req, res) => {
