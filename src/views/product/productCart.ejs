@@ -1,0 +1,40 @@
+<html lang="en">
+	<head>
+		<%- include('../partials/head') %>
+	</head>
+	<body>
+		<!-- header -->
+		<%- include('../partials/header') %>
+		<main>
+			<h2 class="titulo-carrito">Carrito de compras</h2>
+			<section class="items-carrito">
+				<p class="item-cart1">Foto</p>
+				<p class="item-cart2">Producto</p>
+				<p class="item-cart3">Precio</p>
+				<p class="item-cart4">Cantidad</p>
+				<p class="item-cart5">Subtotal</p>
+				<p class="item-cart6">Eliminar</p>
+			</section>
+			<section class="productos-agregados">
+				<img class="agregado-1" src="images/productos/prod1.jfif" alt="producto" />
+				<p class="agregado-2">Producto 1</p>
+				<p class="agregado-3">$ 1.000</p>
+				<div class="suma-cant">
+					<p><i class="fas fa-minus"></i></p>
+					<p class="cant-carrito">1</p>
+					<p><i class="fas fa-plus"></i></p>
+				</div>
+				<p class="agregado-4">$ 1.000</p>
+				<p class="agregado-5"><i class="fas fa-trash-alt"></i></p>
+			</section>
+			<section class="suma-compras">
+				<p class="total-cpra">TOTAL COMPRA</p>
+				<p class="total-prec">$ 1.000</p>
+			</section>
+			<section class="opcion-carrito">
+				<a class="seguir-cpra" href="#">Seguir comprando</a>
+				<button class="bot-fincompra">Finalizar Compra</button>
+			</section>
+		</main>
+	</body>
+</html>
