@@ -11,27 +11,27 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false,
 		},
 		description: {
-			type: DataTypes.TEXT(),
+			type: DataTypes.TEXT,
 			allowNull: true,
 		},
 		price: {
-			type: DataTypes.FLOAT(),
+			type: DataTypes.FLOAT,
 			allwNull: true,
 		},
 		stock: {
-			type: DataTypes.INTEGER(),
+			type: DataTypes.INTEGER,
 			allowNull: true,
 		},
 		offer: {
-			type: DataTypes.BOOLEAN(),
+			type: DataTypes.BOOLEAN,
 			defaultValue: false,
 		},
 		image: {
-			type: DataTypes.TEXT(),
+			type: DataTypes.TEXT,
 			allowNull: true,
 		},
 		idCategory: {
-			type: DataTypes.INTEGER(),
+			type: DataTypes.INTEGER,
 			allowNull: true,
 		},
 	};
@@ -43,10 +43,14 @@ module.exports = (sequelize, DataTypes) => {
 	const product = sequelize.define(alias, structure, config);
 
 	product.associate = function (models) {
-		product.hasMany(models.buydetail, {
+		product.belongsTo(models.buydetail, {
 			as: 'buydetail',
 			foreignKey: 'idProduct',
-		});
+		}),
+			product.belongsTo(models.category, {
+				as: 'category',
+				foreignKey: 'idCategory',
+			});
 	};
 
 	return product;
