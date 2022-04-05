@@ -31,7 +31,11 @@ module.exports = (sequelize, DataTypes) => {
 		buy.belongsTo(models.user, {
 			as: 'user',
 			foreignKey: 'idUser',
-		});
+		}),
+		buy.hasMany(models.buydetail,{
+			as: 'buydetail',
+			foreignKey:'idBuy'
+		})
 	};
 	return buy;
 };
