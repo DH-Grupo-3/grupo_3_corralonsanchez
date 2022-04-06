@@ -2,16 +2,14 @@ const { Router } = require('express');
 const router = Router();
 const { body } = require('express-validator');
 const {
-	show,
-	index,
 	register,
-	processRegister,
+	create,
 	login,
 	loginProcess,
 	profile,
 	logout,
-	crear,
-	save,
+	editar,
+	update,
 } = require('../controllers/user');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
@@ -43,8 +41,6 @@ const validateForm = [
 	}),
 ];
 
-router.get('/list', index);
-
 router.get('/register', guestMiddleware, register);
 
 router.get('/login', guestMiddleware, login);
@@ -53,11 +49,13 @@ router.post('/login', loginProcess);
 
 router.get('/profile', authMiddleware, profile);
 
-router.post('/register', validateForm, processRegister);
+router.post('/register', validateForm, create);
+
+router.get('/edit/:id', editar);
+
+router.post('/edit/:id', validateForm, update);
 
 router.get('/logout', logout);
-
-router.get('/:id', show);
 
 module.exports = router;
 
