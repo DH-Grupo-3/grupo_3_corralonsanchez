@@ -15,19 +15,19 @@
 			>
 				<h3>Carga de productos</h3>
 				<fieldset>
-					<label for="name">Nombre:</label>
+					<label class="productLabel" for="name">Nombre:</label>
 					<input type="text" id="name" name="product_name" />
 				</fieldset>
 				<fieldset>
-					<label for="">Imagen:</label>
+					<label class="productLabel" for="">Imagen:</label>
 					<input type="file" name="product_image" accept=".jpg, .png, .tiff" multiple />
 				</fieldset>
 				<fieldset>
-					<label for="price">Precio:</label>
+					<label class="productLabel" for="price">Precio:</label>
 					<input type="number" id="price" name="product_price" />
 				</fieldset>
 				<fieldset>
-					<label for="category">Categoria:</label>
+					<label class="productLabel" for="category">Categoria:</label>
 					<select name="category" id="category">
 						<option value="category 1">Categoria 1</option>
 						<option value="category 2">Categoria 2</option>
@@ -37,16 +37,16 @@
 					</select>
 				</fieldset>
 				<fieldset>
-					<label for="stock">Stock:</label>
+					<label class="productLabel" for="stock">Stock:</label>
 					<input type="number" id="stock" name="product_stock" />
 				</fieldset>
 				<fieldset>
-					<label>¿Esta en oferta?</label>
+					<label class="productLabel">¿Esta en oferta?</label>
 					<input class="radio" type="radio" name="ofer" value="1" />Si
 					<input class="radio" type="radio" name="ofer" value="0" />No
 				</fieldset>
 				<fieldset>
-					<label for="description">Caracteristicas:</label>
+					<label class="productLabel" for="description">Caracteristicas:</label>
 					<textarea name="product_description" id="description"></textarea>
 				</fieldset>
 

@@ -41,7 +41,6 @@ const controller = {
 				isAdmin: 0,
 			});
 		const saltos = 10;
-		req.body.files = req.files;
 		req.body.password = bcrypt.hashSync(req.body.password, saltos);
 		const newUser = await generate(req.body);
 		db.user.create(newUser);

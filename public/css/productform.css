@@ -108,7 +108,7 @@ button.edit-product {
     .product-form h3 {
         font-size: 2.3rem;
     }
-    label {
+    .productLabel {
         font-size: 1.8rem;
     }
     button.create-product,
