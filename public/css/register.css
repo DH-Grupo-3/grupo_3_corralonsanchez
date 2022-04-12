@@ -124,7 +124,7 @@ fieldset legend {
 
 .formulario__input-error{
     font-size: 12px;
-    margin-bottom: 0;
+    margin: 3px 0 0 5px;
     display: none;
 }
 .formulario__input-error-activo{
@@ -132,8 +132,8 @@ fieldset legend {
 }
 .formulario__validacion-estado {
     position: absolute;
-    right: 10px;
-    bottom: 15px;
+    right: 20px;
+    top: 48px;
     z-index: 100;
     font-size: 16px;
     opacity: 0;
