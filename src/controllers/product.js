@@ -4,91 +4,83 @@ const { product, category, buy, buydetail } = require('../database/models');
 const controller = {
 	getAll: async (req, res) => {
 		try {
-			const products = await product.findAll();
-			res.render('/product/productList', { products: products });
+			const products = await product.findAll()
+			res.render('product/productList', { products: products });
 		} catch (error) {
 			res.status(500).send({message: error});
 		}
 	},
-	getCreateForm: (req, res) => {
-		res.render('product/productForm');
+	getCreateForm: async (req, res) => {
+		const categories = await category.findAll()
+		res.render('product/productForm', { categories: categories });
 	},
 	storageProduct: async (req, res) => {
 		try {
-			req.body.files = req.files;
+			req.body.files = req.files;  
+			console.log(req.body)
 			const newProduct = await product.create({
 				name: req.body.product_name,
 				description: req.body.product_description,
 				price: req.body.product_price,
 				stock: req.body.product_stock,
 				offer: req.body.ofer,
-				image: req.body.product_image,
+				image: req.body.files ? req.body.files[0].filename : 'pato',
 				idCategory: req.body.category
 			});
-			// model.create(newProduct);
-			// return res.redirect('/products/' + nuevo.id + '/edit');	
-			res.redirect('/product/productList');
+			res.redirect('/products');
 		} catch (error) {
 			res.status(500).send({message: error});
 		}
 	},
 	getProductByid: async (req, res) => {
 		try {
-			const product = await product.findByPk(req.params.id);
-			res.render('/product/productDetail', { product });
+			const productId = await product.findByPk(req.params.id);
+			res.render('product/productDetail', { product : productId});
 		} catch (error) {
 			res.status(500).send({message: error});
 		}
 	},
+
 	editProduct: async (req, res) => {
 		try {
-			const product = await product.findByPk(req.params.id);
-			const category = await category.findAll();
-			res.render('/product/productEdit', { product: product, category: category }); 
+			const categoryProduct = await category.findAll();
+			const productToEdit = await product.findByPk(req.params.id, {include: 'category'});
+			res.render('product/productEdit', { product: productToEdit, categories: categoryProduct }); 
 		} catch (error) {
 			res.status(500).send({message: error});
 		}
-		// const { id } = req.params;
-		// let product = id ? model.match('id', id) : null;
-		// return product
-		// 	? res.render('productEdit', {
-		// 			product: product,
-		// 	  })
-		// 	: res.render('error', { error: 'No se encontro ningun producto' });
 	},
 	updateProduct: async (req, res) => {
 		try {
 			req.body.files = req.files;
-			const editProduct = await product.update({
+			const productToEdit = await product.findByPk(req.params.id);
+			await productToEdit.update({
 				name: req.body.product_name,
 				description: req.body.product_description,
 				price: req.body.product_price,
 				stock: req.body.product_stock,
 				offer: req.body.ofer,
-				image: req.body.product_image,
+				image: req.body.files[0].filename,
 				idCategory: req.body.category
 			}, {
 				where: {
 					id: req.params.id
 				}
 			});
-			res.redirect('/product/' + req.params.id);
+			res.redirect('/products/' + req.params.id);
 		} catch (error) {
 			res.status(500).send({message: error});
 		}
-		// const { id } = req.body;
-		// console.log(req.body);
-		// model.update(req.body);
-		// return res.redirect('/products/' + id + '/edit');
 	},
 	deleteProduct: async (req, res) => {
 		try {
-			const productDelete = await product.destroy({
+			const productToDelete = await product.destroy({
 				where: {
 					id: req.params.id
 				}
 			});
-			return res.redirect('/product/productList');
+			console.log(productToDelete)
+			return res.redirect('/products');
 		} catch (error) {
 			res.status(500).send({message: error});
 		}

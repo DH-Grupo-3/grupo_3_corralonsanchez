@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		price: {
 			type: DataTypes.FLOAT,
-			allwNull: true,
+			allowNull: true,
 		},
 		stock: {
 			type: DataTypes.INTEGER,
@@ -36,14 +36,14 @@ module.exports = (sequelize, DataTypes) => {
 		},
 	};
 	const config = {
-		tableName: 'product',
-		timestamp: false,
+		tableName: 'products',
+		timestamps: false,
 	};
 
 	const product = sequelize.define(alias, structure, config);
 
 	product.associate = function (models) {
-		product.belongsTo(models.buydetail, {
+		product.hasMany(models.buydetail, {                  
 			as: 'buydetail',
 			foreignKey: 'idProduct',
 		}),

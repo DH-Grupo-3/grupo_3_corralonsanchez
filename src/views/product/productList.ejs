@@ -14,16 +14,16 @@
 				<article class="destacados__contenedor productos">
 					<img
 						class="imagen_producto"
-						src="/images/productos/prod1.jfif"
+						src="<%= product.image %>"
 						alt="producto"
 					/>
 					<h3><%= product.name %></h3>
 					<p class="precio">Precio: $ <%= product.price %></p>
 					<p class="descrip"><%= product.description %></p>
 					<nav>
-						<a class="boton_editar" href="/products/<%= product.id %>">Editar</a>
+						<a class="boton_editar" href="/products/<%= product.id %>/edit">Editar</a>
 					</nav>
-					<form class="eliminar" action="/productList?m=DELETE" method="post">
+					<form class="eliminar" action="/products/<%= product.id %>?m=DELETE" method="post">
 						<input type="hidden" name="id" value="<%= product.id %>" />
 						<button class="boton_eliminar" type="submit">Eliminar</button>
 					</form>
@@ -33,6 +33,6 @@
 			<!-- Destacados -->
 		</main>
 		<!-- footer -->
-		<%- include('./partials/footer') %>
+		<%- include('../partials/footer') %>
 	</body>
 </html>

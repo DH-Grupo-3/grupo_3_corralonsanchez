@@ -8,7 +8,7 @@
 		<%- include('../partials/header') %>
 		<main>
 			<form
-				action="/products"
+				action="/products/"
 				method="post"
 				class="product-form"
 				enctype="multipart/form-data"
@@ -29,11 +29,12 @@
 				<fieldset>
 					<label for="category">Categoria:</label>
 					<select name="category" id="category">
-						<option value="category 1">Categoria 1</option>
-						<option value="category 2">Categoria 2</option>
-						<option value="category 3">Categoria 3</option>
-						<option value="category 4">Categoria 4</option>
-						<option value="category 5">Categoria 5</option>
+						<% for (let i = 0; i < categories.length; i++) { %>
+							<option value="<%= categories[i].id %>">
+								<%= categories[i].name %>
+							</option>
+
+						<% } %>
 					</select>
 				</fieldset>
 				<fieldset>

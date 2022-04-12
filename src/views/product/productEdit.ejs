@@ -7,7 +7,7 @@
 		<%- include('../partials/header') %>
 		<main>
 			<form
-				action="/products/<% product.id %> ?m=PUT"
+				action="/products/<%= product.id %> ?m=PUT"
 				method="post"
 				class="product-form"
 				enctype="multipart/form-data"
@@ -30,17 +30,23 @@
 						type="file"
 						name="product_image"
 						accept=".jpg, .png, .tiff"
-						value="<%= product.image %>"
+						value="<%= product.image %>" 
 					/>
 				</fieldset>
 				<fieldset>
 					<label for="category">Categoria:</label>
-					<select name="category" id="category" value="<%= product.category %>">
-						<option value="category 1">Categoria 1</option>
-						<option value="category 2">Categoria 2</option>
-						<option value="category 3">Categoria 3</option>
-						<option value="category 4">Categoria 4</option>
-						<option value="category 5">Categoria 5</option>
+					<select name="category" id="category">
+						<% for (let i = 0; i < categories.length; i++) { %>
+							<% if (categories[i].id === product.idCategory) { %>
+								<option value="<%= categories[i].id %>" selected>
+									<%= categories[i].name %> 
+								</option>
+							<% } else { %>
+								<option value="<%= categories[i].id %>">
+									<%= categories[i].name %>
+								</option>
+							<% } %>
+						<% } %>
 					</select>
 				</fieldset>
 				<fieldset>
