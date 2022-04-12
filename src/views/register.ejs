@@ -1,132 +1,144 @@
 <html lang="en">
-	<head>
-		<%- include('./partials/head') %>
-	</head>
-	<body class="body_registro">
-		<!-- header -->
-		<%- include('./partials/header') %>
+
+<head>
+	<%- include('./partials/head') %>
+		<script src="https://kit.fontawesome.com/f81b28ed9e.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="body_registro">
+	<!-- header -->
+	<%- include('./partials/header') %>
 		<main>
 			<!-- <section> -->
-			<form class="formulario" method="POST" action="/users/register">
+			<form class="formulario" id="register" method="POST" action="/users/register">
 				<legend>Formulario de Registro</legend>
 				<section class="contenedor-campos">
-					<fieldset class="campo">
-						<label for="nombre">Nombre y Apellido</label>
-						<input
-							name="full_name"
-							class="input-text"
-							type="text"
-							id="nombre"
-							placeholder="Nombre Completo"
-							value="<%= locals.old && old.full_name ? old.full_name : '' %>"
-						/>
+					<fieldset class="formulario__grupo campo" id="grupo__full_name">
+						<label class="formulario__label" for="nombre">Nombre y Apellido</label>
+						<div class="formulario__grupo-input">
+							<input name="full_name" class="formulario__input input-text" type="text" id="nombre"
+								placeholder="Nombre Completo"
+								value="<%= locals.old && old.full_name ? old.full_name : '' %>" />
+							<i  class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+						</div>
+						<p class="formulario__input-error">El nombre debe tener al menos 2 dígitos.</p>
 						<% if (locals.errores && errores.full_name) { %>
-						<div class="text-danger"><%= errores.full_name.msg %></div>
-						<% } %>
+							<div class="text-danger">
+								<%= errores.full_name.msg %>
+							</div>
+							<% } %>
 					</fieldset>
-					<fieldset class="campo">
-						<label for="dni">DNI</label>
-						<input
-							name="dni"
-							class="input-text"
-							type="text"
-							id="dni"
-							placeholder="DNI"
-							value="<%= locals.old && old.dni ? old.dni : '' %>"
-						/>
+					<fieldset class="formulario__grupo campo" id="grupo__dni">
+						<label class="formulario__label" for="dni">DNI</label>
+						<div class="formulario__grupo-input">
+							<input name="dni" class="formulario__input input-text" type="text" id="dni"
+								placeholder="DNI" value="<%= locals.old && old.dni ? old.dni : '' %>" />
+							<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+						</div>
+						<p class="formulario__input-error">El DNI solo puede tener números.</p>
 						<% if (locals.errores && errores.dni) { %>
-						<div class="text-danger"><%= errores.dni.msg %></div>
-						<% } %>
+							<div class="text-danger">
+								<%= errores.dni.msg %>
+							</div>
+							<% } %>
 					</fieldset>
-					<fieldset class="campo">
-						<label for="cel">Teléfono sin 0, ni prefijo 15</label>
-						<input
-							name="cel"
-							class="input-text"
-							type="tel"
-							id="cel"
-							placeholder="362X-XXXXXX"
-							value="<%= locals.old && old.cel ? old.cel : '' %>"
-						/>
+					<fieldset class="formulario__grupo campo" id="grupo__cel">
+						<label class="formulario__label" for="cel">Teléfono sin 0, ni prefijo 15</label>
+						<div class="formulario__grupo-input">
+							<input name="cel" class="formulario__input input-text" type="tel" id="cel"
+								placeholder="362X-XXXXXX" value="<%= locals.old && old.cel ? old.cel : '' %>" />
+							<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+						</div>
+						<p class="formulario__input-error">El teléfono solo puede tener números y el maximo son 14
+							dígitos. </p>
 						<% if (locals.errores && errores.cel) { %>
-						<div class="text-danger"><%= errores.cel.msg %></div>
-						<% } %>
+							<div class="text-danger">
+								<%= errores.cel.msg %>
+							</div>
+							<% } %>
 					</fieldset>
-					<fieldset class="campo">
-						<label for="address">Direccion</label>
-						<input
-							name="address"
-							class="input-text"
-							type="address"
-							id="address"
-							placeholder="Direccion"
-							value="<%= locals.old && old.address ? old.address : '' %>"
-						/>
+					<fieldset class="formulario__grupo campo" id="grupo__address">
+						<label class="formulario__label" for="address">Direccion</label>
+						<div class="formulario__grupo-input">
+							<input name="address" class="formulario__input input-text" type="address" id="address"
+								placeholder="Direccion" value="<%= locals.old && old.address ? old.address : '' %>" />
+							<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+						</div>
+						<p class="formulario__input-error">Debe introducir una dirección válida.</p>
 						<% if (locals.errores && errores.address) { %>
-						<div class="text-danger"><%= errores.address.msg %></div>
-						<% } %>
+							<div class="text-danger">
+								<%= errores.address.msg %>
+							</div>
+							<% } %>
 					</fieldset>
-					<fieldset class="campo">
-						<label for="email">Correo</label>
-						<input
-							name="email"
-							class="input-text"
-							type="email"
-							id="email"
-							placeholder="Email"
-							value="<%= locals.old && old.email ? old.email : '' %>"
-						/>
+					<fieldset class="formulario__grupo campo" id="grupo__email">
+						<label class="formulario__label" for="email">Correo</label>
+						<div class="formulario__grupo-input">
+							<input name="email" class="formulario__input input-text" type="email" id="email"
+								placeholder="Email" value="<%= locals.old && old.email ? old.email : '' %>" />
+							<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+						</div>
+						<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos,
+							guiones y guion bajo.</p>
 						<% if (locals.errores && errores.email) { %>
-						<div class="text-danger"><%= errores.email.msg %></div>
-						<% } %>
+							<div class="text-danger">
+								<%= errores.email.msg %>
+							</div>
+							<% } %>
 					</fieldset>
-					<fieldset class="campo">
-						<label for="pass1">Contraseña</label>
-						<input
-							name="password"
-							class="input-text"
-							type="password"
-							id="pass1"
-							placeholder="Contraseña"
-						/>
+					<fieldset class="formulario__grupo campo" id="grupo__password">
+						<label class="formulario__label" for="pass1">Contraseña</label>
+						<div class="formulario__grupo-input">
+							<input name="password" class="formulario__input input-text" type="password" id="pass1"
+								placeholder="Contraseña" />
+							<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+						</div>
+						<p class="formulario__input-error">La contraseña debe tener al menos 8 caracteres.</p>
 						<% if (locals.errores && errores.password) { %>
-						<div class="text-danger"><%= errores.password.msg %></div>
-						<% } %>
+							<div class="text-danger">
+								<%= errores.password.msg %>
+							</div>
+							<% } %>
 					</fieldset>
-					<fieldset class="campo">
-						<label for="birth">Fecha de Nacimiento</label>
-						<input
-							name="date_of_birth"
-							class="input-text"
-							id="birth"
-							type="date"
-							value="<%= locals.old && old.date_of_birth ? old.date_of_birth : '' %>"
-						/>
+					<fieldset class="formulario__grupo campo" id="grupo__date_of_birth">
+						<label class="formulario__label" for="birth">Fecha de Nacimiento</label>
+						<div class="formulario__grupo-input">
+							<input name="date_of_birth" class="formulario__input input-text" id="birth" type="date"
+								value="<%= locals.old && old.date_of_birth ? old.date_of_birth : '' %>" />
+							<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+						</div>
+						<p class="formulario__input-error">Debe seleccionar una fecha de nacimiento.</p>
 						<% if (locals.errores && errores.date_of_birth) { %>
-						<div class="text-danger"><%= errores.date_of_birth.msg %></div>
-						<% } %>
+							<div class="text-danger">
+								<%= errores.date_of_birth.msg %>
+							</div>
+							<% } %>
 					</fieldset>
-					<fieldset class="campo">
-						<label for="pass2">Confirmar Contraseña</label>
-						<input
-							name="password2"
-							class="input-text"
-							type="password"
-							id="pass2"
-							placeholder="Confirmar Contraseña"
-						/>
+					<fieldset class="formulario__grupo campo" id="grupo__password2">
+						<label class="formulario__label" for="pass2">Confirmar Contraseña</label>
+						<div class="formulario__grupo-input">
+							<input name="password2" class="formulario__input input-text" type="password" id="pass2"
+								placeholder="Confirmar Contraseña" />
+							<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+						</div>
+						<p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
 						<% if (locals.errores && errores.password2) { %>
-						<div class="text-danger"><%= errores.password2.msg %></div>
-						<% } %>
+							<div class="text-danger">
+								<%= errores.password2.msg %>
+							</div>
+							<% } %>
 					</fieldset>
 				</section>
+				<div class="formulario__mensaje" id="formulario__mensaje">
+					<p><i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellena el formulario
+						correctamente.</p>
+				</div>
 				<!-- .contenedor-campos -->
-				<input
-					class="boton w-sm-100 alinear-centro flex"
-					type="submit"
-					value="Registrarse"
-				/>
+				<input class="boton w-sm-100 alinear-centro flex" type="submit" value="Registrarse" />
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
 			</form>
 		</main>
-	</body>
+		<script src="/js/register.js"></script>
+</body>
+
 </html>
