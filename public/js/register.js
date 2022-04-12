@@ -6,7 +6,7 @@ const expresiones = {
 	password: /^.{8,12}$/, // 4 a 12 digitos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	cel: /^\d{7,14}$/, // 7 a 14 numeros.
-	dni: /^\d{0,10}$/, // 0 a 10 numeros.
+	dni: /^\d{1,10}$/, // 0 a 10 numeros.
 	address: /^[a-zA-Z0-9À-ÿ\s ]{1,40}$/, //
 	birth: /^.{10,14}$/,
 };
