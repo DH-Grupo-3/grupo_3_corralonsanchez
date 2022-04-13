@@ -135,6 +135,7 @@ formulario.addEventListener('submit', (e) => {
 		document
 			.getElementById('formulario__mensaje-exito')
 			.classList.add('formulario__mensaje-exito-activo');
+		document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 		setTimeout(() => {
 			document
 				.getElementById('formulario__mensaje-exito')
