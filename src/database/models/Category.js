@@ -8,12 +8,12 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		name: {
 			type: DataTypes.STRING(100),
-			alloNull: false,
+			allowNull: false,
 		},
 	};
 	const config = {
 		tableName: 'categories',
-		timestamp: false,
+		timestamps: false,
 	};
 	const category = sequelize.define(alias, structure, config);
 	category.associate = function (models) {
