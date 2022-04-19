@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<%- include('../partials/head') %>
+		<link rel="stylesheet" href="/css/index.css" />
+		<link rel="stylesheet" href="/css/footer.css" />
+		<link rel="stylesheet" href="/css/productos.css" />
+		<title>Prueba</title>
+</head>
+
+<body>
+	<%- include('../partials/header') %>
+	<div>
+		<label for="">Categoria</label>
+		<select name="category">
+			<% for( let i = 0; i < categories.length; i++ ) { %>
+			
+				<option value="<%= categories[i].id %> ">
+					<%= categories[i].name %> 
+				</option>
+				<% } %>
+		</select>
+	</div>
+</body>
+
+</html>
