@@ -55,9 +55,9 @@ h4 {
     }
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .detalle__similares {
         display: flex;
         justify-content: space-between;
     }
-}
+} */

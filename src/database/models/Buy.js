@@ -29,9 +29,13 @@ module.exports = (sequelize, DataTypes) => {
 	const buy = sequelize.define(alias, structure, config);
 	buy.associate = function (models) {
 		buy.belongsTo(models.user, {
-			as: 'buys',
+			as: 'user',
 			foreignKey: 'idUser',
-		});
+		}),
+			buy.hasMany(models.buydetail, {
+				as: 'buydetail',
+				foreignKey: 'idBuy',
+			});
 	};
 	return buy;
 };

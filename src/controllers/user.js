@@ -2,13 +2,13 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const db = require('../database/models');
 const controller = {
-	register: (req, res) => res.render('register', { title: 'Register' }),
+	register: (req, res) => res.render('user/register', { title: 'Register' }),
 	// .cookie('testing','mensaje',{masAge:1000*30),
 
 	create: async (req, res) => {
 		let errores = validationResult(req);
 		if (!errores.isEmpty()) {
-			return res.render('register', {
+			return res.render('user/register', {
 				errores: errores.mapped(),
 
 				old: req.body,
@@ -20,7 +20,7 @@ const controller = {
 		const userInDb = await match('email', req.body.email);
 
 		if (userInDb) {
-			return res.render('register', {
+			return res.render('user/register', {
 				errores: {
 					email: {
 						msg: 'Este email ya está registrado',
@@ -48,7 +48,7 @@ const controller = {
 	},
 
 	login: (req, res) => {
-		return res.render('login');
+		return res.render('user/login');
 	},
 	loginProcess: async (req, res) => {
 		const listaUsuarios = await db.user.findAll();

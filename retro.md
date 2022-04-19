@@ -24,3 +24,5 @@ En el desarrollo de esta etapa también tuvimos que replantear las vistas genera
 
 A lo largo del desarrollo del Sprint 4 tuvimos algunos inconvenientes con las funcionalidades propuestas, lo que nos llevo mas tiempo del que nos habiamos propuesto para finalizar con las tareas.
 Si bien logramos solucionar los inconvenientes y llegar al resultado esperado, nos hubiera gustado finalizar a tiempo.
+
+Consideramos que para el desarrollo de las tareas del sprint nos manejamos bastante bien en términos generales. Tuvimos algunas complicaciones con la implementación de multer, pero logramos completar las actividades propuestas.

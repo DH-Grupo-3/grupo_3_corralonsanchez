@@ -1,42 +1,89 @@
-const model = require('../models/product');
+// const model = require('../models/product');
+const { product, category, buy, buydetail } = require('../database/models');
 
 const controller = {
-	getAll: (req, res) => {
-		res.render('productList', { products: model.list() });
+	getAll: async (req, res) => {
+		try {
+			const products = await product.findAll()
+			res.render('product/productList', { products: products });
+		} catch (error) {
+			res.status(500).send({message: error});
+		}
 	},
-	getCreateForm: (req, res) => {
-		res.render('productForm');
+	getCreateForm: async (req, res) => {
+		const categories = await category.findAll()
+		res.render('product/productForm', { categories: categories });
 	},
-	storageProduct: (req, res) => {
-		req.body.files = req.files;
-		const nuevo = model.generate(req.body);
-		model.create(nuevo);
-		return res.redirect('/products/' + nuevo.id + '/edit');
+	storageProduct: async (req, res) => {
+		try {
+			req.body.files = req.files;  
+			console.log(req.body)
+			const newProduct = await product.create({
+				name: req.body.product_name,
+				description: req.body.product_description,
+				price: req.body.product_price,
+				stock: req.body.product_stock,
+				offer: req.body.ofer,
+				image: req.body.files ? req.body.files[0].filename : 'pato',
+				idCategory: req.body.category
+			});
+			res.redirect('/products');
+		} catch (error) {
+			res.status(500).send({message: error});
+		}
 	},
-	getProductByid: (req, res) => {
-		const { id } = req.params;
-		const product = model.match('id', id);
-		res.render('productDetail', { product });
+	getProductByid: async (req, res) => {
+		try {
+			const productId = await product.findByPk(req.params.id);
+			res.render('product/productDetail', { product : productId});
+		} catch (error) {
+			res.status(500).send({message: error});
+		}
 	},
-	editProduct: (req, res) => {
-		const { id } = req.params;
-		let product = id ? model.match('id', id) : null;
-		return product
-			? res.render('productEdit', {
-					product: product,
-			  })
-			: res.render('error', { error: 'No se encontro ningun producto' });
+
+	editProduct: async (req, res) => {
+		try {
+			const categoryProduct = await category.findAll();
+			const productToEdit = await product.findByPk(req.params.id, {include: 'category'});
+			res.render('product/productEdit', { product: productToEdit, categories: categoryProduct }); 
+		} catch (error) {
+			res.status(500).send({message: error});
+		}
 	},
-	updateProduct: (req, res) => {
-		req.body.files = req.files;
-		const { id } = req.body;
-		console.log(req.body);
-		model.update(req.body);
-		return res.redirect('/products/' + id + '/edit');
+	updateProduct: async (req, res) => {
+		try {
+			req.body.files = req.files;
+			const productToEdit = await product.findByPk(req.params.id);
+			await productToEdit.update({
+				name: req.body.product_name,
+				description: req.body.product_description,
+				price: req.body.product_price,
+				stock: req.body.product_stock,
+				offer: req.body.ofer,
+				image: req.body.files[0].filename,
+				idCategory: req.body.category
+			}, {
+				where: {
+					id: req.params.id
+				}
+			});
+			res.redirect('/products/' + req.params.id);
+		} catch (error) {
+			res.status(500).send({message: error});
+		}
 	},
-	deleteProduct: (req, res) => {
-		model.trash(req.body.id);
-		return res.redirect('/productList');
+	deleteProduct: async (req, res) => {
+		try {
+			const productToDelete = await product.destroy({
+				where: {
+					id: req.params.id
+				}
+			});
+			console.log(productToDelete)
+			return res.redirect('/products');
+		} catch (error) {
+			res.status(500).send({message: error});
+		}
 	},
 };
 

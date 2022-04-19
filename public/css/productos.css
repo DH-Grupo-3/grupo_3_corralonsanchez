@@ -91,7 +91,7 @@ form button.boton_eliminar {
 @media (min-width: 768px) {
 	.destacados {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		/* grid-template-columns: repeat(3, 1fr); */
 	};
 
 }
