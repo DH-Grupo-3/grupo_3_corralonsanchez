@@ -111,6 +111,25 @@
     top: 1.2px
 }
 
+.login__mensaje {
+    max-width: 100%;
+    height: auto;
+    line-height: auto;
+    background: #f66060;
+    padding: 10px;
+    border-radius: 3px;
+    display: none;
+}
+
+.login__mensaje p{
+    margin: 0;
+    text-align: center;
+}
+
+.login__mensaje-activo {
+    display: block;
+}
+
 @media (min-width: 768px) {
     .w-sm-100 {
         width: auto;

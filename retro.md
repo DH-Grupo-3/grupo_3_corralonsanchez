@@ -26,3 +26,6 @@ A lo largo del desarrollo del Sprint 4 tuvimos algunos inconvenientes con las fu
 Si bien logramos solucionar los inconvenientes y llegar al resultado esperado, nos hubiera gustado finalizar a tiempo.
 
 Consideramos que para el desarrollo de las tareas del sprint nos manejamos bastante bien en términos generales. Tuvimos algunas complicaciones con la implementación de multer, pero logramos completar las actividades propuestas.
+
+A medida que fuimos desarrollando las tareas propuestas del sprint de Base de Datos fueron surgiendo algunas dificultades, que para solucionarlas tuvimos que replantear algunas ideas y volver a empezar con el modelado de la base de datos de nuestro proyecto. Debido a ésto, el desarrollo nos llevo más tiempo del que teniamos planeado dedicarle a los distintos requerimientos, ya que necesitabamos hacer algunas cosas primero para poder seguir avanzando.
+Si bien logramos cumplir con todas las consignas planteadas, creemos que podemos seguir aportando mejoras a la funcionalidad del proyecto.

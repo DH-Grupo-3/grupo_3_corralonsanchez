@@ -13,12 +13,13 @@ const {
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validateForm = require('../middlewares/validateFormMiddleware');
+const validateLogin = require('../middlewares/validateLoginMiddleware');
 
 router.get('/register', guestMiddleware, register);
 
 router.get('/login', guestMiddleware, login);
 
-router.post('/login', loginProcess);
+router.post('/login', validateLogin, loginProcess);
 
 router.get('/profile', authMiddleware, profile);
 
