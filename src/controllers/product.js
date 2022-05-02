@@ -10,10 +10,11 @@ const controller = {
 			res.status(500).send({message: error});
 		}
 	},
-	getCreateForm: async (req, res) => {
-		const categories = await category.findAll()
+	 getCreateForm: async (req, res) => {
+	 	const categories = await category.findAll()
 		res.render('product/productForm', { categories: categories });
 	},
+
 	storageProduct: async (req, res) => {
 		try {
 			req.body.files = req.files;  

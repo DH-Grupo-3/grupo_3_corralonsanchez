@@ -82,6 +82,102 @@ button.edit-product {
     border: none;
 }
 
+/*validaciones*/
+.text-danger{
+    margin-top: 5px;
+    margin-left: 3px;
+    color: rgb(163, 7, 7);
+}
+
+.formulario__label {
+    cursor: pointer;
+}
+.formulario__grupo-input{
+    position: relative;
+}
+.formulario__input {
+    width: 100%;
+    margin: 0;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+.formulario__input:focus {
+    border: 3px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163 ,163, 0.4);
+}
+
+.formulario__input-error{
+    font-size: 12px;
+    margin: 3px 0 0 5px;
+    display: none;
+}
+.formulario__input-error-activo{
+    display: block;
+}
+.formulario__validacion-estado {
+    position: absolute;
+    right: 20px;
+    top: 48px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+.formulario__mensaje {
+    max-width: 100%;
+    height: auto;
+    line-height: auto;
+    background: #f66060;
+    padding: 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+
+.formulario__mensaje p{
+    margin: 0;
+}
+.formulario__mensaje-activo {
+    display: block;
+}
+
+
+.formulario__mensaje-exito {
+    text-align: center;
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
+
+/* Validaciones */
+
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+}
+.formulario__grupo-incorrecto .formulario__label{
+    color: #bb2929;
+}
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+    color: #bb2929;
+    opacity: 1;
+}
+.formulario__grupo-incorrecto .formulario__input{
+    border: 3px solid #bb2929;
+}
+
+
+
+
 @media (min-width: 480px){
     .product-form {
         width: min(60rem, 75%); 
