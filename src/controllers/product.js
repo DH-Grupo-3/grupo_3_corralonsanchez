@@ -1,4 +1,5 @@
 // const model = require('../models/product');
+const { validationResult } = require('express-validator');
 const { product, category, buy, buydetail } = require('../database/models');
 
 const controller = {
@@ -14,6 +15,7 @@ const controller = {
 		const categories = await category.findAll();
 		res.render('product/productForm', { categories: categories });
 	},
+
 	storageProduct: async (req, res) => {
 		try {
 			let errores = validationResult(req);
@@ -26,7 +28,6 @@ const controller = {
 				});
 			}
 			req.body.files = req.files;
-			console.log(req.body);
 			const newProduct = await product.create({
 				name: req.body.product_name,
 				description: req.body.product_description,
@@ -52,6 +53,15 @@ const controller = {
 
 	editProduct: async (req, res) => {
 		try {
+			let errores = validationResult(req);
+			if (!errores.isEmpty()) {
+				const categories = await category.findAll();
+				return res.render('product/productForm', {
+					errores: errores.mapped(),
+					categories: categories,
+					old: req.body,
+				});
+			}
 			const categoryProduct = await category.findAll();
 			const productToEdit = await product.findByPk(req.params.id, { include: 'category' });
 			res.render('product/productEdit', { product: productToEdit, categories: categoryProduct });
@@ -91,7 +101,6 @@ const controller = {
 					id: req.params.id,
 				},
 			});
-			console.log(productToDelete);
 			return res.redirect('/products');
 		} catch (error) {
 			res.status(500).send({ message: error });

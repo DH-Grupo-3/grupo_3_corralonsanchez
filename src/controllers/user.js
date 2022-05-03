@@ -83,16 +83,15 @@ const controller = {
 					},
 				});
 			}
-			
 		} else {
 			return res.render('user/login', {
-			errores: {
-				email: {
-					msg: 'Email No Registrado',
+				errores: {
+					email: {
+						msg: 'Email No Registrado',
 					},
 				},
 			});
-		};		
+		}
 	},
 	profile: (req, res) => {
 		console.log(req.cookies.userEmail);
@@ -147,4 +146,3 @@ const controller = {
 };
 
 module.exports = controller;
-
