@@ -81,7 +81,7 @@ formulario.addEventListener('submit', (e)=>{
     campos.ofer &&
     campos.product_description
 ) {
-    formulario.reset();
+    // formulario.reset();
 
     document
         .getElementById('formulario__mensaje-exito')
