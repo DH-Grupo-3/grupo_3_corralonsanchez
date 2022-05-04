@@ -51,6 +51,14 @@ const controller = {
 		return res.render('user/login');
 	},
 	loginProcess: async (req, res) => {
+		let errores = validationResult(req);
+		if (!errores.isEmpty()) {
+			return res.render('user/login', {
+				errores: errores.mapped(),
+				old: req.body,
+			});
+		}
+
 		const listaUsuarios = await db.user.findAll();
 		const match = async (propiedad, valor) =>
 			await listaUsuarios.find((user) => user[propiedad] == valor);
@@ -66,23 +74,25 @@ const controller = {
 				}
 
 				return res.redirect('/users/profile');
+			} else {
+				return res.render('user/login', {
+					errores: {
+						data: {
+							msg: 'Email y/o contraseña incorrectos',
+						},
+					},
+				});
 			}
-			return res.render('login', {
-				errores: {
-					email: {
-						msg: 'Las credenciales son inválidas',
+			
+		} else {
+			return res.render('user/login', {
+			errores: {
+				email: {
+					msg: 'Email No Registrado',
 					},
 				},
 			});
-		}
-
-		return res.render('login', {
-			errores: {
-				email: {
-					msg: 'Credenciales inválidas',
-				},
-			},
-		});
+		};		
 	},
 	profile: (req, res) => {
 		console.log(req.cookies.userEmail);
