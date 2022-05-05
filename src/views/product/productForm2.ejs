@@ -1,0 +1,157 @@
+<html lang="en">
+	<head>
+		<%- include('../partials/head') %>
+		<link rel="stylesheet" href="/css/productform.css" />
+	</head>
+	<body class="body-productform">
+		<!-- header -->
+		<%- include('../partials/header') %>
+		<main>
+			<form
+				action="/products/"
+				method="post"
+				class="product-form"
+				id="product-form"
+				enctype="multipart/form-data"
+			>
+				<h3>Carga de productos</h3>
+				
+                <!-- Nombre Producto -->
+                <fieldset class="formulario__grupo formulario__grupo-input" id="grupo__nombre">
+					<label for="name" class='formulario__label'>Nombre:</label>
+					<input 
+                     type="text" 
+                     class="formulario__input" 
+                     id="name" 
+                     name="product_name" />
+
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+
+						<p class="formulario__input-error">
+							El nombre del producto debe tener al menos 2 dígitos.
+						</p>
+						<% if (locals.errores && errores.product_name) { %>
+						<p class="text-danger"><%= errores.product_name.msg %></p>
+						<% } %>
+
+				</fieldset>
+
+                <!-- Imagen -->
+				<fieldset>
+					<label for="" class='formulario__label'>Imagen:</label>
+					<input 
+                     type="file" 
+                     name="product_image" 
+                     class="formulario__input"
+                     accept=".jpg, .png, .tiff" 
+                     multiple />
+
+                     <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+
+						<p class="formulario__input-error">
+							Debe agregar una imagen.
+						</p>
+						<% if (locals.errores && errores.product_image) { %>
+						<p class="text-danger"><%= errores.product_image.msg %></p>
+						<% } %>
+				</fieldset>
+
+                <!-- Precio -->
+				<fieldset class="formulario__grupo formulario__grupo-input" id="grupo__precio">
+					<label for="price" class='formulario__label'>Precio:</label>
+					<input 
+                     type="number" 
+                     id="price" 
+                     name="product_price" 
+                     class="formulario__input"/>
+
+                     <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+
+						<p class="formulario__input-error">
+							El precio del producto solo debe tener numeros y comas 
+						</p>
+						<% if (locals.errores && errores.product_price) { %>
+						<p class="text-danger"><%= errores.product_price.msg %></p>
+						<% } %>
+				</fieldset>
+
+                <!-- Categoria -->
+				<fieldset >
+					<label for="category" >Categoria:</label>
+					<select name="category" id="category">
+						<% for (let i = 0; i < categories.length; i++) { %>
+							<option value="<%= categories[i].id %>">
+								<%= categories[i].name %>
+							</option>
+
+						<% } %>
+					</select>
+				</fieldset>
+
+                <!-- Stock -->
+				<fieldset class="formulario__grupo formulario__grupo-input" id="grupo__stock">
+					<label for="stock" class='formulario__label'>Stock:</label>
+					<input 
+                    type="number" 
+                    id="stock" 
+                    name="product_stock" 
+                    class="formulario__input"/>
+
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+
+						<p class="formulario__input-error">
+							El stock del producto solo debe contener numeros
+						</p>
+						<% if (locals.errores && errores.product_stock) { %>
+						<p class="text-danger"><%= errores.product_stock.msg %></p>
+						<% } %>
+				</fieldset>
+
+                <!-- Oferta -->
+				<fieldset class="formulario__grupo" id="grupo__oferta">
+					<label class='formulario__label'>¿Esta en oferta?</label>
+					<input class="radio" type="radio" name="ofer" value="1" />Si
+					<input class="radio" type="radio" name="ofer" value="0" />No
+				</fieldset>
+
+                <!-- Descripcion -->
+				<fieldset class="formulario__grupo formulario__grupo-input" id="grupo__descripcion">
+					<label for="description"  class='formulario__label'>Caracteristicas:</label>
+					<textarea 
+                    name="product_description" 
+                    id="description"
+                    class="formulario__input"></textarea>
+
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+
+						<p class="formulario__input-error">
+							Debes agregar una descripcion al producto
+						</p>
+						<% if (locals.errores && errores.product_description) { %>
+						<p class="text-danger"><%= errores.product_description.msg %></p>
+						<% } %>
+				</fieldset>
+
+                <section class="formulario__mensaje" id="formulario__mensaje">
+					<p>
+						<i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor
+						rellena el formulario correctamente.
+					</p>
+				</section>
+
+				<button 
+                 class="create-product" 
+                 type="submit">Crear producto
+                </button>
+
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+					Producto creado exitosamente!
+				</p>
+
+			</form>
+		</main>
+
+		<script src="/js/product.js"></script>
+
+	</body>
+</html>
