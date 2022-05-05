@@ -4,8 +4,8 @@ const textArea = document.querySelectorAll('#product-form textarea');
 
 const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    // imagen: 
-    precio:/^\d{1,10}$/, // 0 a 10 numeros. 
+    imagen: /.*(png|jpg|jpeg|gif)$/,
+    precio: /^\d+(,\d+)*(\.\d+)?/, //^\d{1,10}$/, // 0 a 10 numeros. 
     stock: /^\d{1,10}$/, // 0 a 10 numeros.
     // oferta:
     descripcion:/^[a-zA-ZÀ-ÿ\s]{20,100}$/, // Letras y espacios, pueden llevar acentos.
@@ -13,7 +13,7 @@ const expresiones = {
 
 const campos = {
 	nombre: false,
-	product_image: false,
+	imagen: false,
 	precio: false,
 	category: false,
 	stock: false,
@@ -27,7 +27,7 @@ const validarFormulario = (e) => {
        validarCampo(expresiones.nombre, e.target, 'nombre')
       break;
       case "product_image":
-       
+       validarCampo(expresiones.imagen, e.target, 'imagen')
       break;
       case "product_price":
         validarCampo(expresiones.precio, e.target, 'precio')
@@ -39,7 +39,7 @@ const validarFormulario = (e) => {
        
       break;
       case "product_description":
-        validarCampo(expresiones.descripcion, e.target, 'descripcion')
+        validarText(expresiones.descripcion, e.target, 'descripcion')
       break;
   }
 }
@@ -67,6 +67,29 @@ inputs.forEach((input)=>{
   input.addEventListener('blur', validarFormulario)
 });
 
+const validarText = (expresion, textarea, campo) => { 
+  if(expresion.test(textarea.value)){
+      document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto')
+      document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto')
+      document.querySelector(`#grupo__${campo} .formulario__validacion-estado`).classList.add('fa-circle-check')
+      document.querySelector(`#grupo__${campo} .formulario__validacion-estado`).classList.remove('fa-circle-xmark')
+      document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo')
+      campos[campo]= true;
+  }else{
+         document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto')
+         document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto')
+         document.querySelector(`#grupo__${campo} .formulario__validacion-estado`).classList.add('fa-circle-xmark')
+         document.querySelector(`#grupo__${campo} .formulario__validacion-estado`).classList.remove('fa-circle-check')
+         document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo')
+         campos [campo] = false;
+      } 
+}
+
+textArea.forEach((textarea)=>{
+  textarea.addEventListener('keyup', validarFormulario);
+  textarea.addEventListener('blur', validarFormulario);
+});
+
 
 
 formulario.addEventListener('submit', (e)=>{
@@ -74,15 +97,13 @@ formulario.addEventListener('submit', (e)=>{
 
    if (
     campos.nombre &&
-    campos.product_image &&
+    campos.imagen &&
     campos.precio &&
     campos.category &&
-    campos.product_stock &&
+    campos.stock &&
     campos.ofer &&
-    campos.product_description
+    campos.descripcion
 ) {
-    // formulario.reset();
-
     document
         .getElementById('formulario__mensaje-exito')
         .classList.add('formulario__mensaje-exito-activo');
