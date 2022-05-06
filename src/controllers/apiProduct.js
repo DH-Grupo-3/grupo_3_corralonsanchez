@@ -4,8 +4,22 @@ const controller = {
 	getAll: async (req, res) => {
 		try {
 			const categories = await category.findAll();
-			const products = await product.findAll({ include: [{model: category, as: 'category'}] });
-			let countByCategory = {};
+			const products = await product.findAll({ include: [{ model: category, as: 'category' }] });
+
+			let countByCategory = [];
+			for (let category of categories) {
+				let count = 0;
+				let obj = new Object();
+
+				for (let product of products) {
+					obj.name = category.name;
+					if (category.id === product.id) {
+						count++;
+					}
+				}
+				obj.count = count;
+				countByCategory.push(obj);
+			}
 
 			if (!products) {
 				res
@@ -15,10 +29,11 @@ const controller = {
 
 			res.status(200).json({
 				count: products.length,
+				countByCategory: countByCategory,
 				products: products,
 			});
 		} catch (error) {
-			res.status(500).send(error);
+			res.status(500).send({ message: error.message });
 		}
 	},
 
