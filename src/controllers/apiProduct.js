@@ -4,26 +4,22 @@ const controller = {
 	getAll: async (req, res) => {
 		try {
 			const categories = await category.findAll();
-			const products = await product.findAll();
-			let countByCategory = {};
-			for (let category in categories) {
-				let name = category.dataValue.name;
-				console.log(name);
+			const products = await product.findAll({ include: [{ model: category, as: 'category' }] });
+
+			let countByCategory = [];
+			for (let category of categories) {
 				let count = 0;
-				for (let product in products) {
-					if (category.id === product.idCategory) count++;
+				let obj = new Object();
+
+				for (let product of products) {
+					obj.name = category.name;
+					if (category.id === product.id) {
+						count++;
+					}
 				}
-				countByCategory = Object.assign(countByCategory, { name: name, count: count });
+				obj.count = count;
+				countByCategory.push(obj);
 			}
-			console.log(countByCategory);
-
-			let ferreteria = products.map((product) => {
-				if (product.idCategory === 1) {
-					return product;
-				}
-			});
-
-			// res.json(products);
 
 			if (!products) {
 				res
@@ -33,10 +29,11 @@ const controller = {
 
 			res.status(200).json({
 				count: products.length,
-				data: products,
+				countByCategory: countByCategory,
+				products: products,
 			});
 		} catch (error) {
-			res.status(500).send({ message: error });
+			res.status(500).send({ message: error.message });
 		}
 	},
 
