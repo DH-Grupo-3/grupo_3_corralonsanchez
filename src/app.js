@@ -5,6 +5,9 @@ const morgan = require('morgan');
 const router = require('./routers/router');
 const productRouter = require('./routers/product');
 const usersRouter = require('./routers/user');
+const productRouterAPI = require('./routers/productApi');
+const imgRouterAPI = require('./routers/img');
+const userRouterAPI = require('./routers/userApi');
 const path = require('path');
 const method = require('method-override');
 const session = require('express-session');
@@ -38,5 +41,8 @@ app.use(userLoggedMiddleware);
 app.use('/', router);
 app.use('/users', usersRouter);
 app.use('/products', productRouter);
+app.use('/api/products', productRouterAPI);
+app.use('/api/users', userRouterAPI);
+app.use('/api/img', imgRouterAPI);
 
 module.exports = app;
