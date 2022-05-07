@@ -4,9 +4,9 @@ const controller = {
 	getAll: async (req, res) => {
 		try {
 			const categories = await category.findAll();
-			const products = await product.findAll({ include: [{ model: category, as: 'category' }] });
-
+			let products = await product.findAll({ include: [{ model: category, as: 'category' }] });
 			let countByCategory = [];
+
 			for (let category of categories) {
 				let count = 0;
 				let obj = new Object();
@@ -27,6 +27,11 @@ const controller = {
 					.json({ error: true, message: 'no se encontraron productos en la base de datos.' });
 			}
 
+			products = products.map((product) => {
+				product.dataValues.detail = `/api/products/${product.id}`;
+				return product;
+			});
+
 			res.status(200).json({
 				count: products.length,
 				countByCategory: countByCategory,
@@ -39,7 +44,10 @@ const controller = {
 
 	getProductByid: async (req, res) => {
 		try {
-			const productId = await product.findByPk(req.params.id);
+			let productId = await product.findByPk(req.params.id, {
+				include: [{ model: category, as: 'category' }],
+			});
+			productId.dataValues.imgUrl = `/api/img/?img=${productId.image}`;
 
 			if (!productId) {
 				res
@@ -51,7 +59,7 @@ const controller = {
 				data: productId,
 			});
 		} catch (error) {
-			res.status(500).send({ message: error });
+			res.status(500).send({ message: error.message });
 		}
 	},
 };
