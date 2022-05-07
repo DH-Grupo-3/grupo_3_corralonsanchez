@@ -8,7 +8,7 @@ const controller = {
 			const products = await product.findAll();
 			res.render('product/productList', { products: products });
 		} catch (error) {
-			res.status(500).send({ message: error });
+			res.status(500).send({ message: error.message });
 		}
 	},
 	getCreateForm: async (req, res) => {
@@ -28,18 +28,20 @@ const controller = {
 				});
 			}
 			req.body.files = req.files;
+			console.log(req.body.files);
 			const newProduct = await product.create({
 				name: req.body.product_name,
 				description: req.body.product_description,
 				price: req.body.product_price,
 				stock: req.body.product_stock,
 				offer: req.body.ofer,
-				image: req.body.files ? req.body.files[0].filename : 'pato',
+				image: req.body.files[0] ? req.body.files[0].filename : 'notimage.png',
 				idCategory: req.body.category,
 			});
+			console.log(newProduct);
 			res.redirect('/products');
 		} catch (error) {
-			res.status(500).send({ message: error });
+			res.status(500).send({ message: error.stack });
 		}
 	},
 	getProductByid: async (req, res) => {
@@ -47,7 +49,7 @@ const controller = {
 			const productId = await product.findByPk(req.params.id);
 			res.render('product/productDetail', { product: productId });
 		} catch (error) {
-			res.status(500).send({ message: error });
+			res.status(500).send({ message: error.message });
 		}
 	},
 
@@ -66,7 +68,7 @@ const controller = {
 			const productToEdit = await product.findByPk(req.params.id, { include: 'category' });
 			res.render('product/productEdit', { product: productToEdit, categories: categoryProduct });
 		} catch (error) {
-			res.status(500).send({ message: error });
+			res.status(500).send({ message: error.message });
 		}
 	},
 	updateProduct: async (req, res) => {
@@ -80,7 +82,7 @@ const controller = {
 					price: req.body.product_price,
 					stock: req.body.product_stock,
 					offer: req.body.ofer,
-					image: req.body.files[0].filename,
+					image: req.body.files[0] ? req.body.files[0].filename : 'notimage.png',
 					idCategory: req.body.category,
 				},
 				{
@@ -91,7 +93,7 @@ const controller = {
 			);
 			res.redirect('/products/' + req.params.id);
 		} catch (error) {
-			res.status(500).send({ message: error });
+			res.status(500).send({ message: error.message });
 		}
 	},
 	deleteProduct: async (req, res) => {
@@ -103,7 +105,7 @@ const controller = {
 			});
 			return res.redirect('/products');
 		} catch (error) {
-			res.status(500).send({ message: error });
+			res.status(500).send({ message: error.message });
 		}
 	},
 };
