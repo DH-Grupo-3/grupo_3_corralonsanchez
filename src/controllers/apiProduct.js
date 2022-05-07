@@ -13,7 +13,7 @@ const controller = {
 
 				for (let product of products) {
 					obj.name = category.name;
-					if (category.id === product.id) {
+					if (category.id === product.idCategory) {
 						count++;
 					}
 				}
