@@ -15,9 +15,9 @@ const campos = {
 	nombre: false,
 	imagen: false,
 	precio: false,
-	category: false,
+	// category: true,
 	stock: false,
-	ofer: false,
+	// ofer: true,
 	descripcion: false,
 };
 
@@ -35,8 +35,8 @@ const validarFormulario = (e) => {
 		case 'product_stock':
 			validarCampo(expresiones.stock, e.target, 'stock');
 			break;
-		case 'ofer':
-			break;
+		// case 'ofer':
+		// 	break;
 		case 'product_description':
 			validarText(expresiones.descripcion, e.target, 'descripcion');
 			break;
@@ -120,9 +120,9 @@ formulario.addEventListener('submit', (e) => {
 		campos.nombre &&
 		campos.imagen &&
 		campos.precio &&
-		campos.category &&
+		// campos.category &&
 		campos.stock &&
-		campos.ofer &&
+		// campos.ofer &&
 		campos.descripcion
 	) {
 		// formulario.reset();
