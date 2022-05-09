@@ -14,7 +14,7 @@ const session = require('express-session');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const cookies = require('cookie-parser');
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, './views'));
 

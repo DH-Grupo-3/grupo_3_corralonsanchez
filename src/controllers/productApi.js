@@ -10,9 +10,9 @@ const controller = {
 			for (let category of categories) {
 				let count = 0;
 				let obj = new Object();
+				obj.name = category.name;
 
 				for (let product of products) {
-					obj.name = category.name;
 					if (category.id === product.idCategory) {
 						count++;
 					}
@@ -26,9 +26,10 @@ const controller = {
 					.status(404)
 					.json({ error: true, message: 'no se encontraron productos en la base de datos.' });
 			}
-
+			console.log(products);
 			products = products.map((product) => {
 				product.dataValues.detail = `/api/products/${product.id}`;
+				product.dataValues.imgUrl = `/api/img/?img=${product.image}`;
 				return product;
 			});
 
@@ -47,13 +48,14 @@ const controller = {
 			let productId = await product.findByPk(req.params.id, {
 				include: [{ model: category, as: 'category' }],
 			});
-			productId.dataValues.imgUrl = `/api/img/?img=${productId.image}`;
 
 			if (!productId) {
 				res
 					.status(404)
 					.json({ error: true, message: 'no se entro el producto en la base de datos.' });
 			}
+
+			productId.dataValues.imgUrl = `/api/img/?img=${productId.image}`;
 
 			res.status(200).json({
 				data: productId,
