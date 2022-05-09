@@ -26,10 +26,10 @@ const controller = {
 					.status(404)
 					.json({ error: true, message: 'no se encontraron productos en la base de datos.' });
 			}
-
+			console.log(products);
 			products = products.map((product) => {
 				product.dataValues.detail = `/api/products/${product.id}`;
-				productId.dataValues.imgUrl = `/api/img/?img=${productId.image}`;
+				product.dataValues.imgUrl = `/api/img/?img=${product.image}`;
 				return product;
 			});
 
