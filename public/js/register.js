@@ -144,6 +144,10 @@ formulario.addEventListener('submit', (e) => {
 
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
+
+			setTimeout(() => {
+				formulario.submit();
+			  }, 3000);
 		});
 	} else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');

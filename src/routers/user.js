@@ -12,7 +12,7 @@ const {
 } = require('../controllers/user');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const validateForm = require('../middlewares/validateFormMiddleware');
+const validateForm = require('../middlewares/userValidateFormMiddleware');
 const validateLogin = require('../middlewares/validateLoginMiddleware');
 
 router.get('/register', guestMiddleware, register);
@@ -32,4 +32,3 @@ router.post('/edit/:id', validateForm, update);
 router.get('/logout', logout);
 
 module.exports = router;
-
