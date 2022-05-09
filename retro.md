@@ -29,3 +29,5 @@ Consideramos que para el desarrollo de las tareas del sprint nos manejamos basta
 
 A medida que fuimos desarrollando las tareas propuestas del sprint de Base de Datos fueron surgiendo algunas dificultades, que para solucionarlas tuvimos que replantear algunas ideas y volver a empezar con el modelado de la base de datos de nuestro proyecto. Debido a ésto, el desarrollo nos llevo más tiempo del que teniamos planeado dedicarle a los distintos requerimientos, ya que necesitabamos hacer algunas cosas primero para poder seguir avanzando.
 Si bien logramos cumplir con todas las consignas planteadas, creemos que podemos seguir aportando mejoras a la funcionalidad del proyecto.
+
+Para la ejecución de las tareas del Sprint 7, nos organizamos de una mejor manera con respecto a los anteriores en lo que es la división de tareas. En el desarrollo de las mismas, tuvimos algunas complicaciones, por lo que debimos reunirnos mas seguido para tratar de solucionarlas en tiempo. La mayoria de las validaciones logramos cumplirlas a tiempo para la presentación del sprint, y las que quedaron pendientes, si bien no las entregamos a tiempo conseguimos solucionarlas. 
