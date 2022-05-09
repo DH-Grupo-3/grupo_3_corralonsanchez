@@ -123,7 +123,7 @@ button.edit-product {
 .formulario__validacion-estado {
     position: absolute;
     right: 20px;
-    top: 48px;
+    top: 42px;
     z-index: 100;
     font-size: 16px;
     opacity: 0;
