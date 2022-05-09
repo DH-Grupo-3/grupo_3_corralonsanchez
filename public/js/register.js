@@ -130,8 +130,6 @@ formulario.addEventListener('submit', (e) => {
 		campos.password &&
 		campos.date_of_birth
 	) {
-		formulario.reset();
-
 		document
 			.getElementById('formulario__mensaje-exito')
 			.classList.add('formulario__mensaje-exito-activo');
@@ -147,10 +145,9 @@ formulario.addEventListener('submit', (e) => {
 
 			setTimeout(() => {
 				formulario.submit();
-			  }, 3000);
+			}, 3000);
 		});
 	} else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 	}
 });
-

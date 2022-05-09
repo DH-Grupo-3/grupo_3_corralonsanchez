@@ -16,11 +16,11 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false,
 	};
 	const category = sequelize.define(alias, structure, config);
-	// category.associate = function (models) {
-	// 	category.hasMany(models.product, {
-	// 		as: 'products',
-	// 		foreignKey: 'idCategory',
-	// 	});
-	// };
+	category.associate = function (models) {
+		category.hasMany(models.product, {
+			as: 'products',
+			foreignKey: 'idCategory',
+		});
+	};
 	return category;
 };
